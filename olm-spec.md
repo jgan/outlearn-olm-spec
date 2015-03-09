@@ -9,6 +9,8 @@ license : "Public",
 contact : "will@outlearn.com"
 -->
 
+### This is a DRAFT document, not yet fully up to date with the latest OLP specification, please be advised.
+
 <!-- @section -->
 
 # Outlearn Markdown
@@ -23,23 +25,23 @@ OLM files are regular Markdown files, annotated with HTML comments in a special 
 
 OLM is *not* a full-featured replacement for OLP, Outlearn's official package format.  Limitations of OLM include:
 
-* OLM is a single file format.  All content and meta-data is in a single file.  If the amount of content is too large or diverse to naturally fit in a single file, the OLP package format is likely a better fit.
-* Only a single module may be defined in an OLM file.  (Although it may reference existing modules, such as when compiling a learning path from pre-existing Outlearn modules, it may not provide original content for more than one module.)  An OLP package may define and import multiple modules at once.
-* All assets like videos and images must be hosted externally and referenced within the OLM asset annotations.  This means that all referenced assets must be publicly available.  OLP allows bundled assets, including private videos and content.
+* OLM is a single file format.  One text file contains all the content and meta-data.  If the amount of content is too large or diverse to naturally fit in a single file, the OLP package format is likely a better fit.
+* Only a single module may be defined in an OLM file.  Although it may reference existing modules, such as when compiling a learning path from pre-existing Outlearn modules, it may not provide original content for more than one module.  An OLP package may define and import multiple modules at once.
+* All assets (e.g. videos and images) must be hosted externally and referenced within the OLM asset annotations.  This means that all referenced assets must be publicly available.  OLP allows bundled assets, including private videos and content.
 
-If you have great existing Markdown content, OLM is a convenient way to get even more out of it through simple annotations.  If you are authoring learning materials from scratch, we recommend using the richer OLP approach for anything but simple, single-file modules with a handful of sections.
+If you have great existing Markdown content, OLM is a convenient way to get even more out of it through simple annotations that give it life in the Outlearn catalog.  If you are authoring learning materials from scratch, we recommend using the richer OLP approach for anything but simple, single-file modules with a handful of sections.
 
 ### More on OLP
 
 The official Outlearn package format is very easy to author by hand as well.  In the simplest cases, it consists of nothing more than a small JSON file that references assets in the same directory, like images, videos, code snippets, markdown files, or even OLM files.
 
-OLM is actually pre-processed into OLP before importing, so it will always be a subset of the OLP format.
+OLM is pre-processed into OLP before importing, so it will always be a subset of the OLP format.
 
 For more detailed options that OLM supports, it may be helpful to reference analagous sections in the OLP specification. [We should link to analagous sections where appropriate....](#)
 
 ### Naming OLM Files
 
-Outlearn will import OLM files that have an extension of `.olm` or an extension of `.md`.  We recommend `.olm` except in cases where `.md` is required for compatibility with other systems that may be required `.md` to properly render the Markdown.
+Outlearn will import OLM files that have an extension of `.olm` or an extension of `.md`.  We recommend `.olm` except in cases where `.md` is needed for compatibility with other systems that may require the `.md` suffix to properly render the Markdown.
 
 <!-- @section -->
 

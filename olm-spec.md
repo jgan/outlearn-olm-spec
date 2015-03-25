@@ -75,6 +75,20 @@ contact : "will@outlearn.com"
 
 ```
 
+To maintain readability, any value may be continued on contiguous lines by beginning the subsequent lines with a single `-` character.
+
+```markdown
+<!--
+name: capistrano-post
+version : "0.0.2"
+title : "Capistrano"
+description: Capistrano is remote multi-server automation tool
+- that is often used for deployment. In this episode, we will
+- first learn how to execute command line tasks in several servers,
+- then we will deploy a Github repo on a newly fired up EC2 instance.
+-->
+```
+
 ### Value Fields
 
 Most metadata fields are regular values.  Both the value name and the value itself may be quoted or unquoted.
@@ -125,27 +139,7 @@ In the simplest form, `<!-- @section -->` can stand alone.  When you import your
 
 You can override the title as shown by specifying it in the `@section` annotation.
 
-#### Inline and Referenced Sections
-
-All the examples above are of *inline sections*.  When the pre-processor encounters an inline section, it populates that section with all the Markdown text that follows, until the next OLM annotation.  The section is implicitly given a type of `text/markdown`.  If you do not want Markdown interpolation of your content, a type of `text/plain` can be provided in the `@section` annotation.
-
-To maintain readability, any value may be continued on contiguous lines by beginning the subsequent lines with a single `-` character.
-
-```markdown
-<!--
-name: capistrano-post
-version : "0.0.2"
-title : "Capistrano"
-description: Capistrano is remote multi-server automation tool
-- that is often used for deployment. In this episode, we will
-- first learn how to execute command line tasks in several servers,
-- then we will deploy a Github repo on a newly fired up EC2 instance.
--->
-```
-
-A *referenced section* is a self-contained annotation which instructs Outlearn to embed an external asset, such as an image, video, audio file, interactive exercise, or other supported asset type.  Full descriptions of the supported referenced section asset types continues below.
-
-### Referenced Assets
+### Assets
 
 Some assets (like images) can natively be included in Markdown.  That will work, and will render acceptably in the Outlearn learning experience.  However, by explicitly declaring an asset with an @asset annotation, it gets benefits, such as a learner's ability to track progress on it, bookmark it for later, and to see it in the table of contents for your learning module.  OLM provides support for a growing number of referenced asset types, described below.
 

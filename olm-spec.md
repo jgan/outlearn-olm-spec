@@ -152,22 +152,22 @@ description: Capistrano is remote multi-server automation tool
 
 A *referenced section* is a self-contained annotation which instructs Outlearn to embed an external asset, such as an image, video, audio file, interactive exercise, or other supported asset type.  Full descriptions of the supported referenced section asset types continues below.
 
-### Referenced Asset Sections
+### Referenced Assets
 
-Some assets (like images) can natively be included in Markdown.  That will work, and will render acceptably in the Outlearn learning experience.  However, by declaring an asset in its own section, it gets benefits, such as a learner's ability to track progress on it, bookmark it for later, and to see it in the table of contents for your learning module.  OLM provides support for a growing number of referenced asset types, described below.
+Some assets (like images) can natively be included in Markdown.  That will work, and will render acceptably in the Outlearn learning experience.  However, by explicitly declaring an asset with an @asset annotation, it gets benefits, such as a learner's ability to track progress on it, bookmark it for later, and to see it in the table of contents for your learning module.  OLM provides support for a growing number of referenced asset types, described below.
 
-**Note** referenced asset sections require a `title` attribute since one can not be derived from an inline markdown header.
+**Note** referenced assets require a `title` attribute since one can not be derived from an inline markdown header.
 
 #### Video Asset
 
 Here are some examples of video assets.
 
 ```markdown
-<!-- @section, type: 'video/vimeo', title: 'Watch the Video', location: 'https://vimeo.com/61887298' -->
+<!-- @asset, type: 'video/vimeo', title: 'Watch the Video', location: 'https://vimeo.com/61887298' -->
 
-<!-- @section, type: 'video/youtube', title: 'Watch the Video', location: 'https://www.youtube.com/watch?v=CmjeCchGRQo' -->
+<!-- @asset, type: 'video/youtube', title: 'Watch the Video', location: 'https://www.youtube.com/watch?v=CmjeCchGRQo' -->
 
-<!-- @section, type: 'video/mp4', title: 'Watch the Video', location: 'http://www.example.com/training/video1.mp4' -->
+<!-- @asset, type: 'video/mp4', title: 'Watch the Video', location: 'http://www.example.com/training/video1.mp4' -->
 ```
 
 Where possible, Outlearn will try to play the video in our preferred player, which includes advanced features for learners like keyboard controls, skip-back, multiple size options, and accessibility features.  For certain video sources like YouTube, a standard embedded player may be rendered.
@@ -175,15 +175,15 @@ Where possible, Outlearn will try to play the video in our preferred player, whi
 #### Audio Asset
 
 ```markdown
-<!-- @section, type: 'audio/soundcloud', title: 'Uptown Funk', location: 'https://soundcloud.com/mmmusic/mark-ronson-uptown-funk' -->
+<!-- @asset, type: 'audio/soundcloud', title: 'Uptown Funk', location: 'https://soundcloud.com/mmmusic/mark-ronson-uptown-funk' -->
 
-<!-- @section, type: 'audio/mpeg', title: 'Watch the Video', location: 'http://www.podtrac.com/pts/redirect.mp3/twit.cachefly.net/audio/twit/twit0497/twit0497.mp3' -->
+<!-- @asset, type: 'audio/mpeg', title: 'Watch the Video', location: 'http://www.podtrac.com/pts/redirect.mp3/twit.cachefly.net/audio/twit/twit0497/twit0497.mp3' -->
 ```
 
 #### Image Asset
 
 ```markdown
-<!-- @section, type: 'image/jpeg', title: 'Architecture Diagram', location: 'http://ad009cdnb.archdaily.net/wp-content/uploads/2011/05/1304980266-ad30-circulation-diagram.jpg' -->
+<!-- @asset, type: 'image/jpeg', title: 'Architecture Diagram', location: 'http://ad009cdnb.archdaily.net/wp-content/uploads/2011/05/1304980266-ad30-circulation-diagram.jpg' -->
 ```
 
 ### @no-outlearn annotations

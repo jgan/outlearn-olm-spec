@@ -97,13 +97,6 @@ author: Bob, Alice, Steve, Mary, Supermegacorp\, Inc.
 
 ## Breaking Modules into sections
 
-As per the [OLP Specification](#), a module has one or more `sections`.  Each section may be:
-
-1. an asset, which may be text, markdown, video, image, code, or any of the other supported Outlearn asset types
-2. a referenced module to be included at this point in your learning path
-
-### Section Basics
-
 We strongly advise authors to break their content into bite-sized sections to make it easier for learners to navigate, consume, and track their learning progress.  To divide your Outlearn Markdown into navigatable sections for a learner, you can add a `@section` annotation.
 
 ```markdown

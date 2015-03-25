@@ -95,7 +95,7 @@ author: Bob, Alice, Steve, Mary, Supermegacorp\, Inc.
 -->
 ```
 
-## Annotating Module Sections
+## Breaking Modules into sections
 
 As per the [OLP Specification](#), a module has one or more `sections`.  Each section may be:
 

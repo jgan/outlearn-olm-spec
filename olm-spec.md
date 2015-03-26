@@ -173,9 +173,9 @@ Where possible, Outlearn will try to play the video in our preferred player, whi
 <!-- @asset, type: 'image/jpeg', title: 'Architecture Diagram', location: 'http://ad009cdnb.archdaily.net/wp-content/uploads/2011/05/1304980266-ad30-circulation-diagram.jpg' -->
 ```
 
-### @no-outlearn annotations
+### @no-outlearn and @yes-outlearn annotations
 
-In order to use referenced sections, while still allowing your Markdown to render properly in places like Github or a blog, OLM allows you to include an alternate inline representation of a referenced asset.
+In order to use referenced sections, while still allowing your Markdown to render properly in places like Github or a blog, OLM allows you to include an alternate inline representation of a referenced asset by placing it between a pair of @no-outlearn and @yes-outlearn annotations.
 
 ```markdown
 <!-- @asset, type: 'video/vimeo', title: 'Watch the Video', location: 'https://vimeo.com/61887298' -->
@@ -183,6 +183,8 @@ In order to use referenced sections, while still allowing your Markdown to rende
 <!-- @no-outlearn -->
 
 <iframe src="http://player.vimeo.com/video/61887298" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/61887298">Build Podcast 035 Capistrano</a> from <a href="https://vimeo.com/sayanee">Sayanee</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+<!-- @yes-outlearn -->
 
 <!-- @section -->
 

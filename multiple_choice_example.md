@@ -20,7 +20,7 @@ console.log(myNumber)
 
 When the code gets executed, which line will be executed first?
 
-( ) `myNumber++`
+( ) `myNumber++`  
 ( ) `console.log(myNumber)`  
 ( ) One or both of them will not be executed
 

@@ -71,15 +71,15 @@ We strongly advise authors to break their content into bite-sized sections to ma
 
 ```markdown
 
-<!-- @section -->
+ < !-- @section -->
 
 # Introduction
 
-<!-- @section, title: 'Chapter 1 - Basics' -->
+ < !-- @section, "title": "Chapter 1 - Basics" -->
 
 # Chaper 1
 
-<!-- @section, title: 'Chapter 2 - Advanced Topics' -->
+ < !-- @section, "title": "Chapter 2 - Advanced Topics" -->
 
 # Additional Materials
 
@@ -99,7 +99,7 @@ Users can engage with content through simple Todo items.  A trackable checkbox c
 
 
 ```markdown
-   <!-- @todo, "task" : "Run the above code example on your own machine."-->
+   < !-- @todo, "task" : "Run the above code example on your own machine."-->
 ```
 
 ## Requiring a Deliverable
@@ -112,7 +112,7 @@ Your Todo item can optionally require a deliverable to be submitted by a learner
 - paste a code sample, algorithm analysis, or other small response to a question or task
 
 ```markdown
-   <!-- @todo, "deliverable" : true, "task" : "Fork the repository above, fix the broken test, and submit a URL for your pull-request."-->
+   < !-- @todo, "deliverable" : true, "task" : "Fork the repository above, fix the broken test, and submit a URL for your pull-request."-->
 ```
 
 <!-- @section -->
@@ -140,7 +140,7 @@ For content that you want to link to off Outlearn, a regular Markdown link will 
 For a great experience on important external links, OLM provides an `@link` enrichment.
 
 ```markdown
-  <!-- @link, "url" : "https://nodejs.org/", "task": "Install NodeJS" -->
+  < !-- @link, "url" : "https://nodejs.org/", "task": "Install NodeJS" -->
 ```
 
 At import-time, all `@link` enrichments will be expanded to include a title, summary, and image.  
@@ -162,11 +162,11 @@ Video assets hosted on YouTube and Vimeo are supported via the `@asset` tag.
 
 ```markdown
 
-<!-- @asset, type: 'video/vimeo', title: 'Watch the Video', location: 'https://vimeo.com/61887298' -->
+< !-- @asset, type: 'video/vimeo', title: 'Watch the Video', location: 'https://vimeo.com/61887298' -->
 
-<!-- @asset, type: 'video/youtube', title: 'Watch the Video', location: 'https://www.youtube.com/watch?v=CmjeCchGRQo' -->
+< !-- @asset, type: 'video/youtube', title: 'Watch the Video', location: 'https://www.youtube.com/watch?v=CmjeCchGRQo' -->
 
-<!-- @asset, type: 'video/mp4', title: 'Watch the Video', location: 'http://www.example.com/training/video1.mp4' -->
+< !-- @asset, type: 'video/mp4', title: 'Watch the Video', location: 'http://www.example.com/training/video1.mp4' -->
 
 ```
 
@@ -180,13 +180,13 @@ In order to use referenced sections, while still allowing your Markdown to rende
 
 ```markdown
 
-<!-- @asset, type: 'video/vimeo', title: 'Watch the Video', location: 'https://vimeo.com/61887298' -->
+< !-- @asset, type: 'video/vimeo', title: 'Watch the Video', location: 'https://vimeo.com/61887298' -->
 
 <!-- @no-outlearn -->
 
 <iframe src="http://player.vimeo.com/video/61887298" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/61887298">Build Podcast 035 Capistrano</a> from <a href="https://vimeo.com/sayanee">Sayanee</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
-<!-- @section -->
+< !-- @section -->
 
 ## Following section
 

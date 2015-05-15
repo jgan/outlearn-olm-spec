@@ -13,33 +13,27 @@ contact : "will@outlearn.com"
 
 # Outlearn Markdown
 
-> THIS IS A DRAFT DOCUMENT - WE WELCOME FEEDBACK AS THIS FORMAT EVOLVES - CURRENT AS OF April 17, 2015
+> THIS IS A DRAFT DOCUMENT - WE WELCOME FEEDBACK AS THIS FORMAT EVOLVES - CURRENT AS OF May 15, 2015
 
 Outlearn Markdown (*OLM*) is a [Github-Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/) compatible file format for easily creating content that imports directly to Outlearn.
 
-OLM files are regular Markdown files, annotated with HTML comments in a special format that dicates metadata and structure to the Outlearn learning system.
+OLM files are regular Markdown files, annotated with HTML comments in a special format that enriches the content with Outlearn learning features.
 
 **Note:** this specification itself is published in OLM.  Look at the raw markdown to see the annotations for this file in context.
 
-## Limitations and Recommendations
+## OLM as a full Module definition
 
-OLM is *not* a full-featured replacement for [OLP, Outlearn's official package format](http://www.github.com/outlearn-content/outlearn-package-spec).  Limitations of OLM include:
+OLM is primarily used to enrich content, but in many cases it can be used to define a whole Learning Module.  See the [OLP Specification](https://github.com/outlearn-content/outlearn-olp-spec) for details on defining Modules using OLM.
+
+Limitations of OLM-defined Modules include:
 
 * OLM is a single file format.  One text file contains all the content and meta-data.  If the amount of content is too large or diverse to naturally fit in a single file, the OLP package format is likely a better fit.
 * Only a single module may be defined in an OLM file. An OLP package may define and import multiple learning modules at once.
 * All assets (e.g. videos and images) must be hosted remotely and referenced within the OLM asset annotations.  This means that all referenced assets must be publicly available.  OLP allows bundled assets, including private videos and images.
 
-If you have great existing Markdown content, OLM is a convenient way to get even more out of it through simple annotations that give it new life in the Outlearn catalog.  If you are authoring learning materials from scratch, we recommend using the richer OLP approach for anything but simple, single-file modules with a handful of sections.
+If you have great existing Markdown content, OLM is a convenient way to get even more out of it through simple enrichments that give it new life in the Outlearn catalog.  If you are authoring learning materials from scratch, we recommend using the richer OLP approach for anything but simple, single-file Modules with a handful of Sections.
 
-### More on OLP
-
-OLM provides a subset of the full functionality of [Outlearn Packages (OLP)](http://www.github.com/outlearn-content/outlearn-package-spec). The official Outlearn package format is very easy to author by hand as well.  In the simplest cases, it consists of nothing more than a small JSON file that references assets in the same directory, like images, videos, code snippets, markdown files, or even OLM files.
-
-OLM is functionally pre-processed into OLP before importing, so it will always be a subset of the OLP format.
-
-For more detailed options that OLM supports, it may be helpful to reference analagous sections in the OLP specification.
-
-### Naming OLM Files
+## Naming OLM Files
 
 Outlearn will import OLM files that have an extension of `.olm` or an extension of `.md`.  We recommend `.olm` except in cases where `.md` is needed for compatibility with other systems that may require the `.md` suffix to properly render Markdown (notably Github).
 
@@ -49,20 +43,11 @@ Outlearn will import OLM files that have an extension of `.olm` or an extension 
 
 OLM can be easily authored from scratch, or by editing an existing Markdown file to include specific Outlearn annotations in the form of HTML comments.
 
-## Header metadata
+## Header metadata for full Modules
 
-All OLM files must have header metadata specified at the top.  The minimum required fields are:
-
-* **name**: a valid Outlearn module name, this remains fixed and is the ID for your module.  It must be unique within your outlearn user or organization account.
-* **version**: a [semantic version](http://semver.org/) number for this module.  When you make changes, increase the version number before republishing
-* **title**: A descriptive title for your module, which will appear in search results and display wherever your module is shown.
-
-There are many optional fields.  See the full [OLP specification](#) for details.
-
-Fields are specified inside an HTML comment block, one line per field, with the name of the field separated from its value by a single colon.  Extra white space around keys or values is ignored, as are blank lines.
+OLM files defining a Module must have header metadata specified at the top.  Fields are specified using JSON-like syntax inside an HTML comment block.
 
 ```markdown
-
 <!--
 name: outlearn-markdown-specification
 version : 0.0.1
@@ -73,42 +58,16 @@ author : "Will Koffel"
 license : public
 contact : "will@outlearn.com"
 -->
-
 ```
 
-### Value Fields
+See the full [OLP specification](https://github.com/outlearn-content/outlearn-olp-spec) for details.
 
-Most metadata fields are regular values.  The name is unquoted, the value is optionally quoted.
 
-```markdown
+<!-- @section -->
 
-<!--
-title: "My Great Content"
--->
+# Dividing Content into Sections
 
-```
-
-### Array Fields
-
-Some fields, like `author` may contain more than one value.  In this case, a JSON-style array may be specified.
-
-```markdown
-
-<!--
-author: ["Bob", "Alice", "Steve", "Mary", "Supermegacorp, Inc."]
--->
-
-```
-
-## Annotating Module Sections
-
-As per the [OLP Specification](http://www.github.com/outlearn-content/outlearn-package-spec), a module has one or more `sections`.  Each section contains Markdown content, i.e. all the actual text of your learning material.
-
-Your OLM file is broken into sections using the annotations described below.
-
-### Section Basics
-
-We strongly advise authors to break their content into bite-sized sections to make it easier for learners to navigate, consume, and track their learning progress.  To divide your Outlearn Markdown into navigatable sections for a learner, you can add a `@section` annotation.
+We strongly advise authors to break their content into bite-sized sections to make it easier for learners to navigate, consume, and track their learning progress.  To divide your OLM into navigable sections for a learner, you can add a `@section` annotation.
 
 ```markdown
 
@@ -132,13 +91,74 @@ In the simplest form, `<!-- @section -->` can stand alone.  When you import your
 
 You can override the title as shown by specifying it in the `@section` annotation.
 
-### Remote Asset Annotations
+<!-- @section -->
 
-Some assets (like images) can natively be included in Markdown.  That will work, and will render acceptably in the Outlearn learning experience.  However, by declaring an asset in its own annotation, it gets benefits, such as nicer rendering and better progress tracking.  OLM provides support for a growing number of referenced asset types, described below.
+# Todo Items
 
-#### Video Asset
+Users can engage with content through simple Todo items.  A trackable checkbox can be created in your OLM content using the `@todo` enrichment.
 
-Here are some examples of video assets.
+
+```markdown
+   <!-- @todo, "task" : "Run the above code example on your own machine."-->
+```
+
+## Requiring a Deliverable
+
+Your Todo item can optionally require a deliverable to be submitted by a learner.  This can be useful when asking learners to do things like:
+
+- author a simple 1-paragraph summary of what they've learned from watching a video
+- describe three ways a specific technical strategy might be applicable in your codebase
+- submit a pull request URL for a simple code modification in a hands-on lab exercise
+- paste a code sample, algorithm analysis, or other small response to a question or task
+
+```markdown
+   <!-- @todo, "deliverable" : true, "task" : "Fork the repository above, fix the broken test, and submit a URL for your pull-request."-->
+```
+
+<!-- @section -->
+
+# Code Blocks
+
+Markdown provides native support for code blocks.  If found, these code blocks will also get rendered by our syntax-highlighting library.  Code blocks using triple-back-tick are supported just like on Github, and will get automatic syntax-highlighting.
+
+```markdown
+
+```javascript
+function sum(a, b) {
+  return a+b;
+}
+```  # close fenced block
+
+```
+
+<!-- @section -->
+
+# External Links
+
+For content that you want to link to off Outlearn, a regular Markdown link will work, and will open in a new browser tab.
+
+For a great experience on important external links, OLM provides an `@link` enrichment.
+
+```markdown
+  <!-- @link, "url" : "https://nodejs.org/", "task": "Install NodeJS" -->
+```
+
+At import-time, all `@link` enrichments will be expanded to include a title, summary, and image.  
+
+If a link can be embedded in an iframe, it will be seamless integrated with the Outlearn learning environment.  Otherwise, it will open in a new browser tab.
+
+An optional `task` attribute can be included, as seen above, which will create a Todo item automatically attached to this external link.
+
+<!-- @section -->
+
+# Multiple Choice Exercises
+
+
+<!-- @section -->
+
+# Embedding Videos
+
+Video assets hosted on YouTube and Vimeo are supported via the `@asset` tag.
 
 ```markdown
 
@@ -150,27 +170,11 @@ Here are some examples of video assets.
 
 ```
 
-Where possible, Outlearn will try to play the video in our preferred player, which includes advanced features for learners like keyboard controls, skip-back, multiple size options, and accessibility features.  For certain video sources like YouTube, a standard embedded player may be rendered.
+Where possible, Outlearn will try to play the video in our preferred player, which includes advanced features for learners like keyboard controls, skip-back, multiple size options, and accessibility features.
 
-#### Audio Asset
+<!-- @section -->
 
-```markdown
-
-<!-- @section, type: 'audio/soundcloud', title: 'Uptown Funk', location: 'https://soundcloud.com/mmmusic/mark-ronson-uptown-funk' -->
-
-<!-- @section, type: 'audio/mpeg', title: 'Watch the Video', location: 'http://www.podtrac.com/pts/redirect.mp3/twit.cachefly.net/audio/twit/twit0497/twit0497.mp3' -->
-
-```
-
-#### Image Asset
-
-```markdown
-
-<!-- @section, type: 'image/jpeg', title: 'Architecture Diagram', location: 'http://ad009cdnb.archdaily.net/wp-content/uploads/2011/05/1304980266-ad30-circulation-diagram.jpg' -->
-
-```
-
-### @no-outlearn annotations
+# @no-outlearn annotations
 
 In order to use referenced sections, while still allowing your Markdown to render properly in places like Github or a blog, OLM allows you to include an alternate inline representation of a referenced asset.
 
@@ -192,16 +196,8 @@ More content after video here.
 
 An `@no-outlearn` section will end when the parser encounters either an `@section` annotation, or a `@yes-outlearn` annotation.
 
-<!--  @section -->
+<!-- @section, "tracked": false -->
 
-# Importing OLM
-
-To import an OLM file to Outlearn, put it in a Github repo that is public or that you are authorized to access.  Log in to Outlearn with your Github credentials (or link your Github account under *Settings*), and navigate to *Import Module*, where you can specify the Github location for your OLM file for immediate import into your Outlearn account.
-
-Many more details on import are coming, including information about a command-line API for importing, and imports from additional web-based sources.
-
-<!--  @section -->
-
-# Example OLM
+# Examples of OLM
 
 For many examples of content in OLM and OLP format, please refer to the [Outlearn Content](http://www.github.com/outlearn-content) repo on Github.

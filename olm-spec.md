@@ -1,12 +1,13 @@
 <!--
-name: outlearn-markdown-specification
-version : 0.2.0
+name: "outlearn-markdown-specification"
+version : "0.2.0"
 title : "Outlearn Markdown Specification"
+freshnessDate: 2015-05-18
 description: "OLM (Outlearn Markdown) is an annotated, markdown-compatible text format for importing simple learning content as Outlearn modules.  This specification describes in plain terms how to easily author OLM files."
 homepage : "http://www.github.com/outlearn-content/outlearn-markdown-spec"
 author : "Will Koffel"
-license : "Public",
-contact : "will@outlearn.com"
+license : "Public"
+contact : {email: "will@outlearn.com"}
 -->
 
 <!-- @section -->
@@ -49,14 +50,14 @@ OLM files defining a Module must have header metadata specified at the top.  Fie
 
 ```markdown
 <!--
-name: outlearn-markdown-specification
-version : 0.0.1
-title : "Outlearn Markdown Specification"
-description: "OLM (Outlearn Markdown) is an annotated, markdown-compatible text format for importing simple learning content as Outlearn modules.  This specification describes in plain terms how to easily author OLM files."
-homepage : "http://www.outlearn.com/outlearn/outlearn-markdown-spec"
+name: "outlearn-module"
+version : "1.5"
+title : "Outlearn Sample Module"
+description: "This sample module can be customized around your learning content."
+homepage : "http://www.outlearn.com/"
 author : "Will Koffel"
-license : public
-contact : "will@outlearn.com"
+license" : "public"
+contact : { email: "will@outlearn.com" }
 -->
 ```
 

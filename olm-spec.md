@@ -118,7 +118,7 @@ Your Task item can optionally require a deliverable to be submitted by a learner
 - paste a code sample, algorithm analysis, or other small response to a question or task
 
 ```markdown
-   < !-- @task, "deliverable" : true, "tesk" : "Fork the repository above, fix the broken test, and submit a URL for your pull-request."-->
+   < !-- @task, "hasDeliverable" : true, "text" : "Fork the repository above, fix the broken test, and submit a URL for your pull-request."-->
 ```
 
 <!-- @section -->

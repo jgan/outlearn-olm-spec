@@ -83,11 +83,11 @@ We strongly advise authors to break their content into bite-sized sections to ma
 
  < !-- @section, "title": "Chapter 1 - Basics" -->
 
-# Chapter 1
+Let us get started with some fundamentals ...
 
  < !-- @section, "title": "Chapter 2 - Advanced Topics" -->
 
-# Additional Materials
+Now that we are comfortable with the basics ...
 
 ```
 
@@ -95,7 +95,7 @@ Each section has a title, which appears in the table of contents and learning ex
 
 In the simplest form, `<!-- @section -->` can stand alone.  When you import your OLM file, the section will get assigned a title based on the first header tag (line starting with `#`) that is encountered in the section.  In the example above, the opening section will automatically inherit the title "Introduction".
 
-You can override the title as shown by specifying it in the `@section` annotation.
+You can also give the title as shown by specifying it in the `@section` annotation.
 
 <!-- @section -->
 

@@ -1,13 +1,15 @@
 <!--
-name: "outlearn-markdown-specification"
-version : "0.2.0"
-title : "Outlearn Markdown Specification"
-freshnessDate: 2015-05-18
-description: "OLM (Outlearn Markdown) is an annotated, markdown-compatible text format for importing simple learning content as Outlearn modules.  This specification describes in plain terms how to easily author OLM files."
-homepage : "http://www.github.com/outlearn-content/outlearn-markdown-spec"
-author : "Will Koffel"
-license : "Public"
-contact : {email: "will@outlearn.com"}
+{
+"name" : "outlearn-markdown-specification",
+"version" : "0.2.0",
+"freshnessDate": 2015-05-18,
+"title" : "Outlearn Markdown Specification",
+"description": "OLM (Outlearn Markdown) is an annotated, markdown-compatible text format for importing simple learning content as Outlearn modules.",
+"homepage" : "http://www.github.com/outlearn-content/outlearn-markdown-spec",
+"author" : "Will Koffel",
+"license" : "CC BY",
+"contact" : {"email": "will@outlearn.com"}
+}
 -->
 
 <!-- @section -->
@@ -50,14 +52,17 @@ OLM files defining a Module must have header metadata specified at the top.  Fie
 
 ```markdown
 <!--
-name: "outlearn-module"
-version : "1.5"
-title : "Outlearn Sample Module"
-description: "This sample module can be customized around your learning content."
-homepage : "http://www.outlearn.com/"
-author : "Will Koffel"
-license" : "public"
-contact : { email: "will@outlearn.com" }
+{
+"name" : "outlearn-module",
+"version" : "1.5",
+"freshnessDate": 2015-05-18,
+"title" : "Outlearn Sample Module",
+"description" : "This sample module can be customized around your learning content.",
+"homepage" : "http://www.outlearn.com/",
+"author" : "Will Koffel",
+"license"" : "public",
+"contact" : { "email" : "will@outlearn.com" }
+}
 -->
 ```
 
@@ -78,34 +83,34 @@ We strongly advise authors to break their content into bite-sized sections to ma
 
  < !-- @section, "title": "Chapter 1 - Basics" -->
 
-# Chaper 1
+Let us get started with some fundamentals ...
 
  < !-- @section, "title": "Chapter 2 - Advanced Topics" -->
 
-# Additional Materials
+Now that we are comfortable with the basics ...
 
 ```
 
 Each section has a title, which appears in the table of contents and learning experience on Outlearn.
 
-In the simplest form, `<!-- @section -->` can stand alone.  When you import your OLM file, the section will get assigned a title based on the first header tag (line starting with `#`) that is encountered in the section.  In the example above, the opening section will automatically inhereit the title "Introduction".
+In the simplest form, `<!-- @section -->` can stand alone.  When you import your OLM file, the section will get assigned a title based on the first header tag (line starting with `#`) that is encountered in the section.  In the example above, the opening section will automatically inherit the title "Introduction".
 
-You can override the title as shown by specifying it in the `@section` annotation.
+You can also give the title as shown by specifying it in the `@section` annotation.
 
 <!-- @section -->
 
-# Todo Items
+# Task Items
 
-Users can engage with content through simple Todo items.  A trackable checkbox can be created in your OLM content using the `@todo` enrichment.
+Users can engage with content through simple Task items.  A trackable checkbox can be created in your OLM content using the `@task` enrichment.
 
 
 ```markdown
-   < !-- @todo, "task" : "Run the above code example on your own machine."-->
+   < !-- @task, "text" : "Run the above code example on your own machine."-->
 ```
 
 ## Requiring a Deliverable
 
-Your Todo item can optionally require a deliverable to be submitted by a learner.  This can be useful when asking learners to do things like:
+Your Task item can optionally require a deliverable to be submitted by a learner.  This can be useful when asking learners to do things like:
 
 - author a simple 1-paragraph summary of what they've learned from watching a video
 - describe three ways a specific technical strategy might be applicable in your codebase
@@ -113,7 +118,7 @@ Your Todo item can optionally require a deliverable to be submitted by a learner
 - paste a code sample, algorithm analysis, or other small response to a question or task
 
 ```markdown
-   < !-- @todo, "deliverable" : true, "task" : "Fork the repository above, fix the broken test, and submit a URL for your pull-request."-->
+   < !-- @task, "hasDeliverable" : true, "text" : "Fork the repository above, fix the broken test, and submit a URL for your pull-request."-->
 ```
 
 <!-- @section -->

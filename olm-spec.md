@@ -60,7 +60,7 @@ OLM files defining a Module must have header metadata specified at the top.  Fie
 "description" : "This sample module can be customized around your learning content.",
 "homepage" : "http://www.outlearn.com/",
 "author" : "Will Koffel",
-"license"" : "public",
+"license" : "public",
 "contact" : { "email" : "will@outlearn.com" }
 }
 -->

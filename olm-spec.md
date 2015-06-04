@@ -180,11 +180,15 @@ In order to use referenced sections, while still allowing your Markdown to rende
 
 ```markdown
 
-< !-- @asset, type: 'video/vimeo', title: 'Watch the Video', location: 'https://vimeo.com/61887298' -->
+< !-- @asset, "contentType": "outlearn/video", "provider": "vimeo", "url": "https://player.vimeo.com/video/61887298" -->
 
 <!-- @no-outlearn -->
 
-<iframe src="http://player.vimeo.com/video/61887298" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/61887298">Build Podcast 035 Capistrano</a> from <a href="https://vimeo.com/sayanee">Sayanee</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<iframe src="http://player.vimeo.com/video/61887298" width="500" height="281"
+frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/61887298">Build Podcast 035 Capistrano</a>
+from <a href="https://vimeo.com/sayanee">Sayanee</a> on
+<a href="https://vimeo.com">Vimeo</a>.</p>
 
 < !-- @section -->
 

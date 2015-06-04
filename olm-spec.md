@@ -146,7 +146,7 @@ For content that you want to link to off Outlearn, a regular Markdown link will 
 For a great experience on important external links, OLM provides an `@link` enrichment.
 
 ```markdown
-  < !-- @link, "url" : "https://nodejs.org/", "task": "Install NodeJS" -->
+  < !-- @link, "url" : "https://nodejs.org/", "text": "Install NodeJS" -->
 ```
 
 At import-time, all `@link` enrichments will be expanded to include a title, summary, and image.  

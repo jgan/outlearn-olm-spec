@@ -165,7 +165,7 @@ An optional `task` attribute can be included, as seen above, which will create a
 Video assets hosted on YouTube and Vimeo are supported via the `@asset` tag.
 
 ```markdown
-< !-- @asset, "contentType": "outlearn/video", "provider": "vimeo", "url": "https://player.vimeo.com/video/42744689" -->
+< !-- @asset, "contentType": "outlearn/video", "provider": "vimeo", "url": "https://player.vimeo.com/video/67325705" -->
 
 < !-- @asset, "contentType": "outlearn/video", "provider": "youtube", "url": "https://www.youtube.com/embed/CmjeCchGRQo" -->
 ```

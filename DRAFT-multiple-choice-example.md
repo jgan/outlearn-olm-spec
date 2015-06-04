@@ -1,3 +1,6 @@
+This content is an early DRAFT that is not implemented in the Outlearn platform.
+
+
 // Challenge :: Code execution order ::
 {  
 Consider the code sample below:

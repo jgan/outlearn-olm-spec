@@ -22,11 +22,11 @@ Outlearn Markdown (*OLM*) is a [Github-Flavored Markdown](https://help.github.co
 
 OLM files are regular Markdown files, annotated with HTML comments in a special format that enriches the content with Outlearn learning features.
 
-**Note:** this specification itself is published in OLM.  Look at the raw markdown to see the annotations for this file in context.
+**Note:** this specification itself is published in OLM.  Look at the [raw markdown](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/olm-spec.md) to see the annotations for this file in context.
 
 ## OLM as a full Module definition
 
-OLM is primarily used to enrich content, but in many cases it can be used to define a whole Learning Module.  See the [OLP Specification](https://github.com/outlearn-content/outlearn-olp-spec) for details on defining Modules using OLM.
+OLM is primarily used to enrich content, but in many cases it can be used to define a whole Learning Module.  The next section describes how to author Modules using OLM.
 
 Limitations of OLM-defined Modules include:
 
@@ -60,7 +60,7 @@ OLM files defining a Module must have header metadata specified at the top.  Fie
 "description" : "This sample module can be customized around your learning content.",
 "homepage" : "http://www.outlearn.com/",
 "author" : "Will Koffel",
-"license"" : "public",
+"license" : "public",
 "contact" : { "email" : "will@outlearn.com" }
 }
 -->
@@ -128,13 +128,11 @@ Your Task item can optionally require a deliverable to be submitted by a learner
 Markdown provides native support for code blocks.  If found, these code blocks will also get rendered by our syntax-highlighting library.  Code blocks using triple-back-tick are supported just like on Github, and will get automatic syntax-highlighting.
 
 ```markdown
-
 ```javascript
 function sum(a, b) {
   return a+b;
 }
 ```  # close fenced block
-
 ```
 
 <!-- @section -->
@@ -146,7 +144,7 @@ For content that you want to link to off Outlearn, a regular Markdown link will 
 For a great experience on important external links, OLM provides an `@link` enrichment.
 
 ```markdown
-  < !-- @link, "url" : "https://nodejs.org/", "task": "Install NodeJS" -->
+  < !-- @link, "url" : "https://nodejs.org/", "text": "Install NodeJS" -->
 ```
 
 At import-time, all `@link` enrichments will be expanded to include a title, summary, and image.  
@@ -167,13 +165,9 @@ An optional `task` attribute can be included, as seen above, which will create a
 Video assets hosted on YouTube and Vimeo are supported via the `@asset` tag.
 
 ```markdown
+< !-- @asset, "contentType": "outlearn/video", "provider": "vimeo", "url": "https://player.vimeo.com/video/42744689" -->
 
-< !-- @asset, type: 'video/vimeo', title: 'Watch the Video', location: 'https://vimeo.com/61887298' -->
-
-< !-- @asset, type: 'video/youtube', title: 'Watch the Video', location: 'https://www.youtube.com/watch?v=CmjeCchGRQo' -->
-
-< !-- @asset, type: 'video/mp4', title: 'Watch the Video', location: 'http://www.example.com/training/video1.mp4' -->
-
+< !-- @asset, "contentType": "outlearn/video", "provider": "youtube", "url": "https://www.youtube.com/embed/CmjeCchGRQo" -->
 ```
 
 Where possible, Outlearn will try to play the video in our preferred player, which includes advanced features for learners like keyboard controls, skip-back, multiple size options, and accessibility features.

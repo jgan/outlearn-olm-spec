@@ -22,11 +22,11 @@ Outlearn Markdown (*OLM*) is a [Github-Flavored Markdown](https://help.github.co
 
 OLM files are regular Markdown files, annotated with HTML comments in a special format that enriches the content with Outlearn learning features.
 
-**Note:** this specification itself is published in OLM.  Look at the raw markdown to see the annotations for this file in context.
+**Note:** this specification itself is published in OLM.  Look at the [raw markdown](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/olm-spec.md) to see the annotations for this file in context.
 
 ## OLM as a full Module definition
 
-OLM is primarily used to enrich content, but in many cases it can be used to define a whole Learning Module.  See the [OLP Specification](https://github.com/outlearn-content/outlearn-olp-spec) for details on defining Modules using OLM.
+OLM is primarily used to enrich content, but in many cases it can be used to define a whole Learning Module.  The next section describes how to author Modules using OLM.
 
 Limitations of OLM-defined Modules include:
 
@@ -128,13 +128,11 @@ Your Task item can optionally require a deliverable to be submitted by a learner
 Markdown provides native support for code blocks.  If found, these code blocks will also get rendered by our syntax-highlighting library.  Code blocks using triple-back-tick are supported just like on Github, and will get automatic syntax-highlighting.
 
 ```markdown
-
 ```javascript
 function sum(a, b) {
   return a+b;
 }
 ```  # close fenced block
-
 ```
 
 <!-- @section -->

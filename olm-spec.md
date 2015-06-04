@@ -160,7 +160,13 @@ An optional `task` attribute can be included, as seen above, which will create a
 
 <!-- @section -->
 
-# Embedding Videos
+# Embedding Images and Videos
+
+Outlearn supports the regular Markdown syntax for including images.
+
+```markdown
+![sea](https://raw.githubusercontent.com/outlearn-content/outlearn-modules/master/assets/sea.jpg)
+```
 
 Video assets hosted on YouTube and Vimeo are supported via the `@asset` tag.
 
@@ -199,6 +205,18 @@ More content after video here.
 ```
 
 An `@no-outlearn` section will end when the parser encounters either an `@section` annotation, or a `@yes-outlearn` annotation.
+
+<!-- @section, -->
+
+# Highlight boxes
+
+You can create highlight boxes using the block quote syntax from Markdown.
+```markdown
+> Important message for everyone to see.
+```
+This turns into
+
+> Important message for everyone to see.
 
 <!-- @section, "tracked": false -->
 

@@ -2,7 +2,7 @@
 {
 "name" : "outlearn-markdown-specification",
 "version" : "0.2.0",
-"freshnessDate": 2015-05-18,
+"freshnessDate": 2015-06-15,
 "title" : "Outlearn Markdown Specification",
 "description": "OLM (Outlearn Markdown) is an annotated, markdown-compatible text format for importing simple learning content as Outlearn modules.",
 "homepage" : "http://www.github.com/outlearn-content/outlearn-markdown-spec",
@@ -16,7 +16,7 @@
 
 # Outlearn Markdown
 
-> THIS IS A DRAFT DOCUMENT - WE WELCOME FEEDBACK AS THIS FORMAT EVOLVES - CURRENT AS OF May 15, 2015
+> THIS IS A DRAFT DOCUMENT - WE WELCOME FEEDBACK AS THIS FORMAT EVOLVES - CURRENT AS OF JUNE 15, 2015
 
 Outlearn Markdown (*OLM*) is a [Github-Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/) compatible file format for easily creating content that imports directly to Outlearn.
 
@@ -156,6 +156,66 @@ An optional `task` attribute can be included, as seen above, which will create a
 <!-- @section -->
 
 # Multiple Choice Exercises
+
+Simple multiple choice exercises include three components.  The _question_ (and any associated exposition), the _answers_, and an optional _hint_.
+
+In OLM, we can define multiple choice questions by putting them between a `@multipleChoice` and an `@end` annotation.
+
+```markdown
+
+<!-- @multipleChoice -->
+
+### Operator Precedence
+
+The following code snippet:
+
+```javascript
+`var x = a + b * c + d;`
+ ``` # close fenced block
+
+is equivalent to which of the answers below?
+
+- [ ] `var x = (a + b) * (c + d);`
+- [ ] `var x = a + ((b * (c + d));`
+- [X] `var x = (a + (b * c)) + d;`
+- [ ] `var x = ((a + b) * c) + d;`
+- [X] `var x = a + ((b * c) + d);`
+
+Remember, `*` has higher precedence than `+`, so it will bind tighter.
+
+<!-- @end -->
+
+```
+
+Use `- [ ]` to start an incorrect answer, and `- [X]` to start a correct answer.
+The markdown above the answers is treated as the question, and the markdown below the answers
+is used as a 'hint' or 'explanation' that your learners can choose to reveal.
+
+The above example appears in a multiple-choice block when rendered on Outlearn.
+
+
+Multiple Choice answers support the full markdown syntax, but without the Outlearn extensions.
+
+```markdown
+
+<!-- @multipleChoice -->
+
+Which of these people created Linux?
+
+- [ ] ![](http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Bill_Gates_July_2014.jpg/220px-Bill_Gates_July_2014.jpg)
+
+  **Bill Gates**
+
+- [X] ![](http://upload.wikimedia.org/wikipedia/commons/thumb/5/52/LinuxCon_Europe_Linus_Torvalds_03.jpg/220px-LinuxCon_Europe_Linus_Torvalds_03.jpg)
+
+  **Linus Torvalds**
+
+- [ ] ![](http://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Guido_van_Rossum_OSCON_2006.jpg/200px-Guido_van_Rossum_OSCON_2006.jpg)
+
+  **Guido van Rossum**
+
+<!-- @end -->
+```
 
 
 <!-- @section -->

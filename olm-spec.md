@@ -179,7 +179,6 @@ is equivalent to which of the answers below?
 - [ ] `var x = a + ((b * (c + d));`
 - [X] `var x = (a + (b * c)) + d;`
 - [ ] `var x = ((a + b) * c) + d;`
-- [X] `var x = a + ((b * c) + d);`
 
 Remember, `*` has higher precedence than `+`, so it will bind tighter.
 

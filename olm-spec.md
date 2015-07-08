@@ -177,10 +177,9 @@ In OLM, we can define multiple choice questions by putting them between a `@mult
 
 What is Node.js?
 
-- [ ] A command-line tool
-- [ ] A programming language
-- [ ] A UI framework
-- [X] None of the above
+- [ ] A package manager for JavaScript packages
+- [ ] A front-end framework for heavy-traffic web applications
+- [X] A platform for scalable network applications
 
 Remember that Node.js is more powerful than any individual use that it can be associated with.
 
@@ -198,16 +197,15 @@ When used in an Outlearn Module, the above example appears as follows:
 
 What is Node.js?
 
-- [ ] A command-line tool
-- [ ] A programming language
-- [ ] A UI framework
-- [X] None of the above
+- [ ] A package manager for JavaScript packages
+- [ ] A front-end framework for heavy-traffic web applications
+- [X] A platform for scalable network applications
 
 Remember that Node.js is more powerful than any individual use that it can be associated with.
 
 <!-- @end -->
 
-Multiple Choice answers support the full markdown syntax, but without the Outlearn extensions. Below are two examples with code highlighting and embedded images. You can see the source code in the [GitHub repo](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/olm-spec.md).
+Multiple Choice answers support the full markdown syntax, but without the Outlearn extensions. Below are examples with code highlighting and embedded images. You can see the source code in the [GitHub repo](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/olm-spec.md).
 
 <!-- @multipleChoice -->
 

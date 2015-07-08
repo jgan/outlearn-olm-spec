@@ -171,36 +171,43 @@ Simple multiple choice exercises include three components.  The _question_ (and 
 
 In OLM, we can define multiple choice questions by putting them between a `@multipleChoice` and an `@end` annotation.
 
-<code>
+```markdown
 
 < !-- @multipleChoice -->
 
-### Operator Precedence
+What is Node.js?
 
-The following code snippet:
+- [ ] A command-line tool
+- [ ] A programming language
+- [ ] A UI framework
+- [X] None of the above
 
-```javascript
-`var x = a + b * c + d;`
- ```.
-
-is equivalent to which of the answers below?
-
-- [ ] `var x = (a + b) * (c + d);`
-- [ ] `var x = a + ((b * (c + d));`
-- [X] `var x = (a + (b * c)) + d;`
-- [ ] `var x = ((a + b) * c) + d;`
-
-Remember, `*` has higher precedence than `+`, so it will bind tighter.
+Remember that Node.js is more powerful than any individual use that it can be associated with.
 
 < !-- @end -->
 
-</code>
+```
 
 Use `- [ ]` to start an incorrect answer, and `- [X]` to start a correct answer.
 The markdown above the answers is treated as the question, and the markdown below the answers
 is used as a 'hint' or 'explanation' that your learners can choose to reveal.
 
 When used in an Outlearn Module, the above example appears as follows:
+
+<!-- @multipleChoice -->
+
+What is Node.js?
+
+- [ ] A command-line tool
+- [ ] A programming language
+- [ ] A UI framework
+- [X] None of the above
+
+Remember that Node.js is more powerful than any individual use that it can be associated with.
+
+<!-- @end -->
+
+Multiple Choice answers support the full markdown syntax, but without the Outlearn extensions. Below are two examples with code highlighting and embedded images. You can see the source code in the [GitHub repo](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/olm-spec.md).
 
 <!-- @multipleChoice -->
 
@@ -222,9 +229,6 @@ is equivalent to which of the answers below?
 Remember, `*` has higher precedence than `+`, so it will bind tighter.
 
 <!-- @end -->
-
-Multiple Choice answers support the full markdown syntax, but without the Outlearn extensions. Here is an example with embedded images
-
 
 <!-- @multipleChoice -->
 

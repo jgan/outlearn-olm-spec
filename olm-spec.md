@@ -171,7 +171,7 @@ Simple multiple choice exercises include three components.  The _question_ (and 
 
 In OLM, we can define multiple choice questions by putting them between a `@multipleChoice` and an `@end` annotation.
 
-```markdown
+<code>
 
 < !-- @multipleChoice -->
 
@@ -181,7 +181,7 @@ The following code snippet:
 
 ```javascript
 `var x = a + b * c + d;`
- ```
+ ```.
 
 is equivalent to which of the answers below?
 
@@ -194,7 +194,7 @@ Remember, `*` has higher precedence than `+`, so it will bind tighter.
 
 < !-- @end -->
 
-```
+</code>
 
 Use `- [ ]` to start an incorrect answer, and `- [X]` to start a correct answer.
 The markdown above the answers is treated as the question, and the markdown below the answers
@@ -210,7 +210,7 @@ The following code snippet:
 
 ```javascript
 `var x = a + b * c + d;`
- ``` 
+ ```
 
 is equivalent to which of the answers below?
 

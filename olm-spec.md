@@ -2,7 +2,7 @@
 {
 "name" : "outlearn-markdown-specification",
 "version" : "0.2.0",
-"freshnessDate": 2015-06-15,
+"freshnessDate": 2015-07-08,
 "title" : "Outlearn Markdown Specification",
 "description": "OLM (Outlearn Markdown) is an annotated, markdown-compatible text format for importing simple learning content as Outlearn modules.",
 "homepage" : "http://www.github.com/outlearn-content/outlearn-markdown-spec",
@@ -16,7 +16,7 @@
 
 # Outlearn Markdown
 
-> THIS IS A DRAFT DOCUMENT - WE WELCOME FEEDBACK AS THIS FORMAT EVOLVES - CURRENT AS OF JUNE 15, 2015
+> THIS IS A DRAFT DOCUMENT - WE WELCOME FEEDBACK AS THIS FORMAT EVOLVES - CURRENT AS OF JULY 8, 2015
 
 Outlearn Markdown (*OLM*) is a [Github-Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/) compatible file format for easily creating content that imports directly to Outlearn.
 
@@ -200,12 +200,31 @@ Use `- [ ]` to start an incorrect answer, and `- [X]` to start a correct answer.
 The markdown above the answers is treated as the question, and the markdown below the answers
 is used as a 'hint' or 'explanation' that your learners can choose to reveal.
 
-The above example appears in a multiple-choice block when rendered on Outlearn.
+When used in an Outlearn Module, the above example appears as follows:
 
+<!-- @multipleChoice -->
 
-Multiple Choice answers support the full markdown syntax, but without the Outlearn extensions.
+### Operator Precedence
 
-```markdown
+The following code snippet:
+
+```javascript
+`var x = a + b * c + d;`
+ ``` # close fenced block
+
+is equivalent to which of the answers below?
+
+- [ ] `var x = (a + b) * (c + d);`
+- [ ] `var x = a + ((b * (c + d));`
+- [X] `var x = (a + (b * c)) + d;`
+- [ ] `var x = ((a + b) * c) + d;`
+
+Remember, `*` has higher precedence than `+`, so it will bind tighter.
+
+<!-- @end -->
+
+Multiple Choice answers support the full markdown syntax, but without the Outlearn extensions. Here is an example with embedded images
+
 
 <!-- @multipleChoice -->
 
@@ -224,7 +243,7 @@ Which of these people created Linux?
   **Guido van Rossum**
 
 <!-- @end -->
-```
+
 
 
 <!-- @section -->

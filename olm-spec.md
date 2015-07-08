@@ -81,6 +81,8 @@ We strongly advise authors to break their content into bite-sized sections to ma
 
 # Introduction
 
+Welcome to learning about ...
+
  < !-- @section, "title": "Chapter 1 - Basics" -->
 
 Let us get started with some fundamentals ...
@@ -134,6 +136,14 @@ function sum(a, b) {
 }
 ```  # close fenced block
 ```
+
+The JavaScript code shown above will be rendered by Outlearn as below:
+
+```javascript
+function sum(a, b) {
+  return a+b;
+}
+```  
 
 <!-- @section -->
 
@@ -234,6 +244,14 @@ Video assets hosted on YouTube and Vimeo are supported via the `@asset` tag.
 
 < !-- @asset, "contentType": "outlearn/video", "provider": "youtube", "url": "https://www.youtube.com/embed/CmjeCchGRQo" -->
 ```
+Remember to to use `https` and not `http` when specifying the video URL. Otherwise some browsers will not show it. Note that Outlearn uses the embed URLs. Here is how you extract the video ID if you are watching the video.
+
+| Video Provider | URL | Video ID | Embed URL |
+|-----------|----------|--------|-------------|
+| Vimeo | https://vimeo.com/67325705 | 67325705| https://player.vimeo.com/video/67325705 |
+| YouTube | https://www.youtube.com/watch?v=CmjeCchGRQo | CmjeCchGRQo | https://www.youtube.com/embed/CmjeCchGRQo |
+
+
 
 Where possible, Outlearn will try to play the video in our preferred player, which includes advanced features for learners like keyboard controls, skip-back, multiple size options, and accessibility features.
 

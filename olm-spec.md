@@ -181,7 +181,7 @@ The following code snippet:
 
 ```javascript
 `var x = a + b * c + d;`
- ``` # close fenced block
+ ```
 
 is equivalent to which of the answers below?
 
@@ -210,7 +210,7 @@ The following code snippet:
 
 ```javascript
 `var x = a + b * c + d;`
- ``` # close fenced block
+ ``` 
 
 is equivalent to which of the answers below?
 

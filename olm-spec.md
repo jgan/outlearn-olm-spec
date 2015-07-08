@@ -173,7 +173,7 @@ In OLM, we can define multiple choice questions by putting them between a `@mult
 
 ```markdown
 
-<!-- @multipleChoice -->
+< !-- @multipleChoice -->
 
 ### Operator Precedence
 
@@ -192,7 +192,7 @@ is equivalent to which of the answers below?
 
 Remember, `*` has higher precedence than `+`, so it will bind tighter.
 
-<!-- @end -->
+< !-- @end -->
 
 ```
 

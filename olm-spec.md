@@ -280,49 +280,6 @@ Remember to to use `https` and not `http` when specifying the video URL. Otherwi
 
 Where possible, Outlearn will try to play the video in our preferred player, which includes advanced features for learners like keyboard controls, skip-back, multiple size options, and accessibility features.
 
-<!-- @section -->
-
-# @no-outlearn annotations
-
-In order to use referenced sections, while still allowing your Markdown to render properly in places like Github or a blog, OLM allows you to include an alternate inline representation of a referenced asset.
-
-```markdown
-
-< !-- @asset, "contentType": "outlearn/video", "provider": "vimeo", "url": "https://player.vimeo.com/video/61887298" -->
-
-<!-- @no-outlearn -->
-
-<iframe src="http://player.vimeo.com/video/61887298" width="500" height="281"
-frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/61887298">Build Podcast 035 Capistrano</a>
-from <a href="https://vimeo.com/sayanee">Sayanee</a> on
-<a href="https://vimeo.com">Vimeo</a>.</p>
-
-< !-- @yes-outlearn -->
-
-More content after video here.
-
-```
-
-An `@no-outlearn` section will end when the parser encounters either an `@section` annotation, or a `@yes-outlearn` annotation.
-
-The example above will be rendered by Outlearn as follows:
-
-<!-- @asset, "contentType": "outlearn/video", "provider": "vimeo", "url": "http://player.vimeo.com/video/61887298" -->
-
-<!-- @no-outlearn -->
-
-<iframe src="http://player.vimeo.com/video/61887298" width="500" height="281"
-frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/61887298">Build Podcast 035 Capistrano</a>
-from <a href="https://vimeo.com/sayanee">Sayanee</a> on
-<a href="https://vimeo.com">Vimeo</a>.</p>
-
-<!-- @yes-outlearn -->
-
-More content after video here.
-
-
 
 <!-- @section, -->
 

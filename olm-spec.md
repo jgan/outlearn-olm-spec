@@ -308,7 +308,7 @@ An `@no-outlearn` section will end when the parser encounters either an `@sectio
 
 The example above will be rendered by Outlearn as follows:
 
-< !-- @asset, "contentType": "outlearn/video", "provider": "vimeo", "url": "https://player.vimeo.com/video/61887298" -->
+<!-- @asset, "contentType": "outlearn/video", "provider": "vimeo", "url": "https://player.vimeo.com/video/61887298" -->
 
 <!-- @no-outlearn -->
 

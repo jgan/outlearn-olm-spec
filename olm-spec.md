@@ -312,7 +312,7 @@ The example above will be rendered by Outlearn as follows:
 
 <!-- @no-outlearn -->
 
-<iframe src="http://player.vimeo.com/video/61887298" width="500" height="281"
+<iframe src="https://player.vimeo.com/video/61887298" width="500" height="281"
 frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/61887298">Build Podcast 035 Capistrano</a>
 from <a href="https://vimeo.com/sayanee">Sayanee</a> on

@@ -189,7 +189,7 @@ Remember that Node.js is more powerful than any individual use that it can be as
 
 Use `- [ ]` to start an incorrect answer, and `- [X]` to start a correct answer.
 The markdown above the answers is treated as the question, and the markdown below the answers
-is used as a 'hint' or 'explanation' that your learners can choose to reveal.
+is used as a 'hint' or 'explanation' that your learners can choose to reveal. Any additional text after the “@end” will be ignored, so the user can make a note themselves of which asset they are closing with that tag.  For example `<!-- @end (first multiple choice) -->`
 
 When used in an Outlearn Module, the above example appears as follows:
 

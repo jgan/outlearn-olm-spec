@@ -123,6 +123,10 @@ Your Task item can optionally require a deliverable to be submitted by a learner
    < !-- @task, "hasDeliverable" : true, "text" : "Fork the repository above, fix the broken test, and submit a URL for your pull-request."-->
 ```
 
+The example above gets rendered on Outlearn as follows:
+
+ <!-- @task, "hasDeliverable" : true, "text" : "Fork the repository above, fix the broken test, and submit a URL for your pull-request."-->
+
 <!-- @section -->
 
 # Code Blocks
@@ -294,15 +298,31 @@ frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></ifram
 from <a href="https://vimeo.com/sayanee">Sayanee</a> on
 <a href="https://vimeo.com">Vimeo</a>.</p>
 
-< !-- @section -->
-
-## Following section
+< !-- @yes-outlearn -->
 
 More content after video here.
 
 ```
 
 An `@no-outlearn` section will end when the parser encounters either an `@section` annotation, or a `@yes-outlearn` annotation.
+
+The example above will be rendered by Outlearn as follows:
+
+< !-- @asset, "contentType": "outlearn/video", "provider": "vimeo", "url": "https://player.vimeo.com/video/61887298" -->
+
+<!-- @no-outlearn -->
+
+<iframe src="http://player.vimeo.com/video/61887298" width="500" height="281"
+frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/61887298">Build Podcast 035 Capistrano</a>
+from <a href="https://vimeo.com/sayanee">Sayanee</a> on
+<a href="https://vimeo.com">Vimeo</a>.</p>
+
+<!-- @yes-outlearn -->
+
+More content after video here.
+
+
 
 <!-- @section, -->
 

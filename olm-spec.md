@@ -2,10 +2,10 @@
 {
 "name" : "outlearn-markdown-specification",
 "version" : "0.2.0",
-"freshnessDate": 2015-07-08,
 "title" : "Outlearn Markdown Specification",
 "description": "OLM (Outlearn Markdown) is an annotated, markdown-compatible text format for importing simple learning content as Outlearn modules.",
 "homepage" : "http://www.github.com/outlearn-content/outlearn-markdown-spec",
+"freshnessDate": 2015-07-29,
 "author" : "Will Koffel",
 "license" : "CC BY",
 "contact" : {"email": "will@outlearn.com"}
@@ -16,7 +16,7 @@
 
 # Outlearn Markdown
 
-> THIS IS A DRAFT DOCUMENT - WE WELCOME FEEDBACK AS THIS FORMAT EVOLVES - CURRENT AS OF JULY 8, 2015
+> THIS IS A DRAFT DOCUMENT - WE WELCOME FEEDBACK AS THIS FORMAT EVOLVES - CURRENT AS OF JULY 29, 2015
 
 Outlearn Markdown (*OLM*) is a [Github-Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/) compatible file format for easily creating content that imports directly to Outlearn.
 
@@ -53,20 +53,21 @@ OLM files defining a Module must have header metadata specified at the top.  Fie
 ```markdown
 <!--
 {
-"name" : "outlearn-module",
-"version" : "1.5",
-"freshnessDate": 2015-05-18,
-"title" : "Outlearn Sample Module",
-"description" : "This sample module can be customized around your learning content.",
-"homepage" : "http://www.outlearn.com/",
-"author" : "Will Koffel",
-"license" : "public",
-"contact" : { "email" : "will@outlearn.com" }
+"name" : "learning-the-tango-steps",
+"version" : "1.0",
+"title" : "Learning the Tango Steps",
+"description": "An introduction to the steps of the tango, including a video lesson.",
+"homepage" : "http://tango.outlearn.com/",
+"canonicalSource" : "http://tango.outlearn.com/steps",
+"freshnessDate" : 2015-07-29,
+"author" : "Dancing Doreen",
+"license" : "CC BY",
+"organization" : "Outlearn Dance Studios"
 }
 -->
 ```
 
-See the full [OLP specification](https://github.com/outlearn-content/outlearn-olp-spec) for details.
+See the full [OLP specification](https://pilot.outlearn.com/learn/outlearn/outlearn-publishing/4) for details.
 
 
 <!-- @section -->

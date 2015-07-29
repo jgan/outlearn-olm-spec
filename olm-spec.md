@@ -276,7 +276,7 @@ Remember to to use `https` and not `http` when specifying the video URL. Otherwi
 |-----------|----------|--------|
 | Player URL | https://vimeo.com/67325705 | https://www.youtube.com/watch?v=CmjeCchGRQo  |
 | Video ID | 67325705 | CmjeCchGRQo |
-| Embed URL | https://player.vimeo.com/video/67325705 | https://www.youtube.com/watch?v=CmjeCchGRQo | 
+| Embed URL | https://player.vimeo.com/video/67325705 | https://www.youtube.com/watch?v=CmjeCchGRQo |
 
 
 | Video Provider | Player URL | Video ID | Embed URL |
@@ -294,14 +294,16 @@ Where possible, Outlearn will try to play the video in our preferred player, whi
 # Highlight boxes
 
 You can create highlight boxes using the block quote syntax from Markdown.
+
 ```markdown
 > Important message for everyone to see.
 ```
+
 This turns into
 
 > Important message for everyone to see.
 
-<!-- @section, "tracked": false -->
+<!-- @section -->
 
 # Examples of OLM
 

@@ -158,7 +158,7 @@ For content that you want to link to off Outlearn, a regular Markdown link will 
 For a great experience on important external links, OLM provides an `@link` enrichment.
 
 ```markdown
-  < !-- @link, "url" : "https://nodejs.org/", "text": "Install NodeJS" -->
+< !-- @link, "url" : "https://nodejs.org/", "text": "Install NodeJS" -->
 ```
 
 At import-time, all `@link` enrichments will be expanded to include a title, summary, and image.  
@@ -269,9 +269,17 @@ Video assets hosted on YouTube and Vimeo are supported via the `@asset` tag.
 
 < !-- @asset, "contentType": "outlearn/video", "provider": "youtube", "url": "https://www.youtube.com/embed/CmjeCchGRQo" -->
 ```
-Remember to to use `https` and not `http` when specifying the video URL. Otherwise some browsers will not show it. Note that Outlearn uses the embed URLs. Here is how you extract the video ID if you are watching the video.
+Remember to to use `https` and not `http` when specifying the video URL. Otherwise some browsers will not show it. Note that Outlearn uses the embed URLs. Here is how you extract the video ID from the player URL and turn it into the embed URL.
 
-| Video Provider | URL | Video ID | Embed URL |
+
+| Video Provider | Vimeo | YouTube |
+|-----------|----------|--------|
+| Player URL | https://vimeo.com/67325705 | https://www.youtube.com/watch?v=CmjeCchGRQo  |
+| Video ID | 67325705 | CmjeCchGRQo |
+| Embed URL | https://player.vimeo.com/video/67325705 | https://www.youtube.com/watch?v=CmjeCchGRQo | 
+
+
+| Video Provider | Player URL | Video ID | Embed URL |
 |-----------|----------|--------|-------------|
 | Vimeo | https://vimeo.com/67325705 | 67325705| https://player.vimeo.com/video/67325705 |
 | YouTube | https://www.youtube.com/watch?v=CmjeCchGRQo | CmjeCchGRQo | https://www.youtube.com/embed/CmjeCchGRQo |

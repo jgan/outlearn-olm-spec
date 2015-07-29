@@ -107,7 +107,7 @@ Users can engage with content through simple Task items.  A trackable checkbox c
 
 
 ```markdown
-   < !-- @task, "text" : "Run the above code example on your own machine."-->
+< !-- @task, "text" : "Run the above code example on your own machine."-->
 ```
 
 ## Requiring a Deliverable
@@ -120,7 +120,7 @@ Your Task item can optionally require a deliverable to be submitted by a learner
 - paste a code sample, algorithm analysis, or other small response to a question or task
 
 ```markdown
-   < !-- @task, "hasDeliverable" : true, "text" : "Fork the repository above, fix the broken test, and submit a URL for your pull-request."-->
+< !-- @task, "hasDeliverable" : true, "text" : "Fork the repository above, fix the broken test, and submit a URL for your pull-request."-->
 ```
 
 The example above gets rendered on Outlearn as follows:

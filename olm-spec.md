@@ -276,7 +276,7 @@ Remember to to use `https` and not `http` when specifying the video URL. Otherwi
 |-----------|----------|--------|
 | Regular URL | https://vimeo.com/67325705 | https://www.youtube.com/watch?v=CmjeCchGRQo  |
 | Video ID | 67325705 | CmjeCchGRQo |
-| Embed URL | https://player.vimeo.com/video/67325705 | https://www.youtube.com/embed/CmjeCchGRQo  |
+| Embed URL | https://player.vimeo.com/video/67325705 | [https://www.youtube.com/embed/ CmjeCchGRQo](https://www.youtube.com/embed/CmjeCchGRQo)  |
 
 
 

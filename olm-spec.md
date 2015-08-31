@@ -76,23 +76,36 @@ See the full [OLP specification](https://pilot.outlearn.com/learn/outlearn/outle
 
 We strongly advise authors to break their content into bite-sized sections to make it easier for learners to navigate, consume, and track their learning progress.  To divide your OLM into navigable sections for a learner, you can add a `@section` annotation.
 
-```markdown
+<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</pre></td><td class="code"><pre> <span class="nv">&lt;</span>!-- @section --&gt;
 
- < !-- @section -->
-
-# Introduction
+<span class="gh"># Introduction</span>
 
 Welcome to learning about ...
 
- < !-- @section, "title": "Chapter 1 - Basics" -->
+ <span class="nv">&lt;</span>!-- @section, "title": "Chapter 1 - Basics" --&gt;
 
 Let us get started with some fundamentals ...
 
- < !-- @section, "title": "Chapter 2 - Advanced Topics" -->
+ <span class="nv">&lt;</span>!-- @section, "title": "Chapter 2 - Advanced Topics" --&gt;
 
 Now that we are comfortable with the basics ...
+</pre></td></tr></tbody></table>
+</div>
 
-```
+
+
 
 Each section has a title, which appears in the table of contents and learning experience on Outlearn.
 
@@ -107,9 +120,9 @@ You can also give the title as shown by specifying it in the `@section` annotati
 Users can engage with content through simple Task items.  A trackable checkbox can be created in your OLM content using the `@task` enrichment.
 
 
-```markdown
-< !-- @task, "text" : "Run the above code example on your own machine."-->
-```
+<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @task, "text" : "Run the above code example on your own machine." --&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
 
 ## Requiring a Deliverable
 
@@ -120,9 +133,9 @@ Your Task item can optionally require a deliverable to be submitted by a learner
 - submit a pull request URL for a simple code modification in a hands-on lab exercise
 - paste a code sample, algorithm analysis, or other small response to a question or task
 
-```markdown
-< !-- @task, "hasDeliverable" : true, "text" : "Fork the repository above, fix the broken test, and submit a URL for your pull-request."-->
-```
+<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @task, "hasDeliverable" : true, "text" : "Fork the repository above, fix the broken test, and submit a URL for your pull-request." --&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
 
 The example above gets rendered on Outlearn as follows:
 
@@ -158,9 +171,9 @@ For content that you want to link to off Outlearn, a regular Markdown link will 
 
 For a great experience on important external links, OLM provides an `@link` enrichment.
 
-```markdown
-< !-- @link, "url" : "https://nodejs.org/", "text": "Install NodeJS" -->
-```
+<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @link, "url" : "https://nodejs.org/", "text": "Install NodeJS" --&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
 
 At import-time, all `@link` enrichments will be expanded to include a title, summary, and image.  
 
@@ -176,21 +189,30 @@ Simple multiple choice exercises include three components.  The _question_ (and 
 
 In OLM, we can define multiple choice questions by putting them between a `@multipleChoice` and an `@end` annotation.
 
-```markdown
-
-< !-- @multipleChoice -->
+<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12</pre></td><td class="code"><pre><span class="nb">&lt;!-- @multipleChoice --&gt;</span>
 
 What is Node.js?
-
-- [ ] A package manager for JavaScript packages
-- [ ] A front-end framework for heavy-traffic web applications
-- [X] A platform for scalable network applications
+<span class="p">
+-</span> <span class="p">[</span><span class="nv"> </span><span class="p">]</span> A package manager for JavaScript packages
+<span class="p">-</span> <span class="p">[</span><span class="nv"> </span><span class="p">]</span> A front-end framework for heavy-traffic web applications
+<span class="p">-</span> <span class="p">[</span><span class="nb">X</span><span class="p">]</span> A platform for scalable network applications
 
 Remember that Node.js is more powerful than any individual use that it can be associated with.
 
-< !-- @end -->
-
-```
+<span class="nb">&lt;!-- @end --&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
 
 Use `- [ ]` to start an incorrect answer, and `- [X]` to start a correct answer.
 The markdown above the answers is treated as the question, and the markdown below the answers
@@ -216,11 +238,12 @@ Multiple Choice answers support the full markdown syntax, but without the Outlea
 
 ### Operator Precedence
 
-The following code snippet:
+</br>
 
-```javascript
+The following code snippet:
+</br>
 `var x = a + b * c + d;`
- ```
+</br>
 
 is equivalent to which of the answers below?
 
@@ -265,11 +288,14 @@ Outlearn supports the regular Markdown syntax for including images.
 
 Video assets hosted on YouTube and Vimeo are supported via the `@asset` tag.
 
-```markdown
-< !-- @asset, "contentType": "outlearn/video", "provider": "vimeo", "url": "https://player.vimeo.com/video/67325705" -->
+<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="nv">&lt;!-- @asset, "contentType": "outlearn/video", "provider": "vimeo", "url": "https://player.vimeo.com/video/67325705" --&gt;</span>
 
-< !-- @asset, "contentType": "outlearn/video", "provider": "youtube", "url": "https://www.youtube.com/embed/CmjeCchGRQo" -->
-```
+<span class="nv">&lt;!-- @asset, "contentType": "outlearn/video", "provider": "youtube", "url": "https://www.youtube.com/embed/CmjeCchGRQo" --&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
+
 Remember to to use `https` and not `http` when specifying the video URL. Otherwise some browsers will not show it. Note that Outlearn uses the embed URLs. Here is how you extract the video ID from the regular URL and turn it into the embed URL.
 
 

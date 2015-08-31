@@ -88,17 +88,17 @@ We strongly advise authors to break their content into bite-sized sections to ma
 10
 11
 12
-13</pre></td><td class="code"><pre> <span class="nb">&lt;</span>!-- @section --&gt;
+13</pre></td><td class="code"><pre><span class="nb">&lt;</span>!-- @section --&gt;
 
 # Introduction
 
 Welcome to learning about ...
 
- <span class="nb">&lt;</span>!-- @section, "title": "Chapter 1 - Basics" --&gt;
+<span class="nb">&lt;</span>!-- @section, "title": "Chapter 1 - Basics" --&gt;
 
 Let us get started with some fundamentals ...
 
- <span class="nb">&lt;</span>!-- @section, "title": "Chapter 2 - Advanced Topics" --&gt;
+<span class="nb">&lt;</span>!-- @section, "title": "Chapter 2 - Advanced Topics" --&gt;
 
 Now that we are comfortable with the basics ...
 </pre></td></tr></tbody></table>

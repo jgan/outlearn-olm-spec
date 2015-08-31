@@ -242,13 +242,7 @@ Multiple Choice answers support the full markdown syntax, but without the Outlea
 
 The following code snippet:
 
-</br>
-
-```javascript
-var x = a + b * c + d;
-```
-
-</br>
+`var x = a + b * c + d;`
 
 is equivalent to which of the answers below?
 

@@ -69,7 +69,7 @@ OLM files defining a Module must have header metadata specified at the top.  Fie
 -->
 ```
 
-See the full [OLP specification](https://pilot.outlearn.com/learn/outlearn/outlearn-publishing/4) for details.
+See the full [OLP specification](https://www.outlearn.com/learn/outlearn/outlearn-publishing/4) for details.
 
 
 <!-- @section -->

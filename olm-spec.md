@@ -172,7 +172,7 @@ function sum(a, b) {
 
 When you want to link to a page outside of Outlearn, a regular Markdown link will work, and will open in a new browser tab.
 
-If you want to give learners a great experience with links, OLM provides a bunch of ways to enrich with the `@link` element.
+If you want to give learners a great experience with links, OLM provides a bunch of ways to enrich them with the `@link` element.
 
 The simplest example is to create a task out the link as below:
 
@@ -182,7 +182,9 @@ The simplest example is to create a task out the link as below:
 
 At import-time, all `@link` enrichments will be expanded to include a title, description, and image.  
 
-![Basic Link](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/images/basic-link.png)
+<!-- @link, "url" : "https://nodejs.org/" -->
+
+<!-- ![Basic Link](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/images/basic-link.png) -->
 
 You can specify the text to be used with the checkbox using the `"text"` field:
 
@@ -196,7 +198,9 @@ For further customization, you can also override the title, image, and descripti
 </pre></td></tr></tbody></table>
 </div>
 
-![Customized Link](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/images/customized-link.png)
+<!-- @link, "url" : "https://nodejs.org", "text": "Learn more about Node.js", "title": "Official Node.js site", "imageUrl" : "http://code-maven.com/img/node.png", "description": "Node.js is a JavaScript runtime which uses an event-driven, non-blocking I/O model that makes it lightweight and efficient." -->
+
+<!-- ![Customized Link](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/images/customized-link.png) -->
 
 You can also include links by embedding or by creating a screenshot. Embedding works for assets such as YouTube and Vimeo videos, slideshares, PDFs, etc. They will be functional so that the learner does not need to leave the page. Most pages can also be included as a screenshot that links out to the original link. Because the exact behavior depends on the target link, this attribute is called `"prefer"` with current options `"embed"` and `"screenshot"`. If you do not indicate a preference, all embeddable assets will be embedded and other pages will be included as regular links as shown above.
 
@@ -212,7 +216,9 @@ If a link is not embeddable but you want to keep the learner on the page, you ma
 </pre></td></tr></tbody></table>
 </div>
 
-![Customized Link](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/images/iframe.png)
+<!-- @link, "url" : "https://nodejs.org/", "text": "Install Node.js", "iframeable" : true -->
+
+<!-- ![Customized Link](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/images/iframe.png) -->
 
 
 <!-- @section -->

@@ -182,7 +182,7 @@ The simplest example is to create a task out the link as below:
 
 At import-time, all `@link` enrichments will be expanded to include a title, description, and image.  
 
-![Basic Link](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/images/basic-link.jpg)
+![Basic Link](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/images/basic-link.png)
 
 You can specify the text to be used with the checkbox using the `"text"` field:
 
@@ -196,7 +196,7 @@ For further customization, you can also override the title, image, and descripti
 </pre></td></tr></tbody></table>
 </div>
 
-![Customized Link](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/images/customized-link.jpg)
+![Customized Link](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/images/customized-link.png)
 
 You can also include links by embedding or by creating a screenshot. Embedding works for assets such as YouTube and Vimeo videos, slideshares, PDFs, etc. They will be functional so that the learner does not need to leave the page. Most pages can also be included as a screenshot that links out to the original link. Because the exact behavior depends on the target link, this attribute is called `"prefer"` with current options `"embed"` and `"screenshot"`. If you do not indicate a preference, all embeddable assets will be embedded and other pages will be included as regular links as shown above.
 
@@ -212,7 +212,7 @@ If a link is not embeddable but you want to keep the learner on the page, you ma
 </pre></td></tr></tbody></table>
 </div>
 
-![Customized Link](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/images/iframe.jpg)
+![Customized Link](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/images/iframe.png)
 
 
 <!-- @section -->

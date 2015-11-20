@@ -174,13 +174,13 @@ When you want to link to a page outside of Outlearn, a regular Markdown link wil
 
 If you want to give learners a great experience with links, OLM provides a bunch of ways to enrich them with the `@link` element.
 
-The simplest example is to create a task out the link as below:
+The simplest example is to create a task out the link:
 
 <div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @link, "url" : "https://nodejs.org/" --&gt;</span>
 </pre></td></tr></tbody></table>
 </div>
 
-At import-time, all `@link` enrichments will be expanded to include a title, description, and image.  
+At import-time, all `@link` enrichments will be expanded to include a title, description, and image. You can see the code above rendered below:
 
 <!-- @link, "url" : "https://nodejs.org/" -->
 
@@ -197,6 +197,8 @@ For further customization, you can also override the title, image, and descripti
 <div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @link, "url" : "https://nodejs.org", "text": "Learn more about Node.js", "title": "Official Node.js site", "imageUrl" : "http://code-maven.com/img/node.png", "description": "Node.js is a JavaScript runtime which uses an event-driven, non-blocking I/O model that makes it lightweight and efficient." --&gt;</span>
 </pre></td></tr></tbody></table>
 </div>
+
+The link will render like this:
 
 <!-- @link, "url" : "https://nodejs.org", "text": "Learn more about Node.js", "title": "Official Node.js site", "imageUrl" : "http://code-maven.com/img/node.png", "description": "Node.js is a JavaScript runtime which uses an event-driven, non-blocking I/O model that makes it lightweight and efficient." -->
 
@@ -215,6 +217,8 @@ If a link is not embeddable but you want to keep the learner on the page, you ma
 <div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @link, "url" : "https://nodejs.org/", "text": "Install Node.js", "iframeable" : true --&gt;</span>
 </pre></td></tr></tbody></table>
 </div>
+
+Try clicking on the link to see the iframe in action.
 
 <!-- @link, "url" : "https://nodejs.org/", "text": "Install Node.js", "iframeable" : true -->
 

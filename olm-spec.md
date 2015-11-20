@@ -1,11 +1,11 @@
 <!--
 {
 "name" : "outlearn-markdown-specification",
-"version" : "0.2.0",
+"version" : "0.2.1",
 "title" : "Outlearn Markdown Specification",
 "description": "OLM (Outlearn Markdown) is an annotated, markdown-compatible text format for importing simple learning content as Outlearn modules.",
 "homepage" : "http://www.github.com/outlearn-content/outlearn-markdown-spec",
-"freshnessDate": 2015-11-13,
+"freshnessDate": 2015-11-20,
 "author" : "Will Koffel",
 "license" : "CC BY",
 "contact" : {"email": "will@outlearn.com"}
@@ -17,7 +17,7 @@
 # Outlearn Markdown
 
 
-> THIS IS A DRAFT DOCUMENT - WE WELCOME FEEDBACK AS THIS FORMAT EVOLVES - CURRENT AS OF NOVEMBER 13, 2015
+> THIS IS A DRAFT DOCUMENT - WE WELCOME FEEDBACK AS THIS FORMAT EVOLVES - CURRENT AS OF NOVEMBER 20, 2015
 
 
 Outlearn Markdown (*OLM*) is a [Github-Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/) compatible file format for easily creating content that imports directly to Outlearn.
@@ -25,6 +25,8 @@ Outlearn Markdown (*OLM*) is a [Github-Flavored Markdown](https://help.github.co
 OLM files are regular Markdown files, annotated with HTML comments in a special format that enriches the content with Outlearn learning features.
 
 **Note:** this specification itself is published in OLM.  Look at the [raw markdown](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/olm-spec.md) to see the annotations for this file in context.
+
+<!-- We could remove this part. The OLM Modules work so well that it's probably not necessary to bring in this complication.
 
 ## OLM as a full Module definition
 
@@ -41,6 +43,8 @@ If you have great existing Markdown content, OLM is a convenient way to get even
 ## Naming OLM Files
 
 Outlearn will import OLM files that have an extension of `.olm` or an extension of `.md`.  We recommend `.olm` except in cases where `.md` is needed for compatibility with other systems that may require the `.md` suffix to properly render Markdown (notably Github).
+
+ -->
 
 <!-- @section -->
 
@@ -106,9 +110,6 @@ Now that we are comfortable with the basics ...
 </pre></td></tr></tbody></table>
 </div>
 
-
-
-
 Each section has a title, which appears in the table of contents and learning experience on Outlearn.
 
 In the simplest form, `<!-- @section -->` can stand alone.  When you import your OLM file, the section will get assigned a title based on the first header tag (line starting with `#`) that is encountered in the section.  In the example above, the opening section will automatically inherit the title "Introduction".
@@ -169,19 +170,50 @@ function sum(a, b) {
 
 # External Links
 
-For content that you want to link to off Outlearn, a regular Markdown link will work, and will open in a new browser tab.
+When you want to link to a page outside of Outlearn, a regular Markdown link will work, and will open in a new browser tab.
 
-For a great experience on important external links, OLM provides an `@link` enrichment.
+If you want to give learners a great experience with links, OLM provides a bunch of ways to enrich with the `@link` element.
 
-<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @link, "url" : "https://nodejs.org/", "text": "Install NodeJS" --&gt;</span>
+The simplest example is to create a task out the link as below:
+
+<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @link, "url" : "https://nodejs.org/" --&gt;</span>
 </pre></td></tr></tbody></table>
 </div>
 
-At import-time, all `@link` enrichments will be expanded to include a title, summary, and image.  
+At import-time, all `@link` enrichments will be expanded to include a title, description, and image.  
 
-If a link can be embedded in an iframe, it will be seamless integrated with the Outlearn learning environment.  Otherwise, it will open in a new browser tab.
+![Basic Link](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/images/basic-link.jpg)
 
-An optional `task` attribute can be included, as seen above, which will create a Todo item automatically attached to this external link.
+You can specify the text to be used with the checkbox using the `"text"` field:
+
+<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @link, "url" : "https://nodejs.org/", "text": "Install Node.js" --&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
+
+For further customization, you can also override the title, image, and description used for the link. This can be done with the attributes `"title"`, `"imageUrl"`, and `"description"` as follows:
+
+<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @link, "url" : "https://nodejs.org", "text": "Learn more about Node.js", "title": "Official Node.js site", "imageUrl" : "http://code-maven.com/img/node.png", "description": "Node.js is a JavaScript runtime which uses an event-driven, non-blocking I/O model that makes it lightweight and efficient." --&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
+
+![Customized Link](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/images/customized-link.jpg)
+
+You can also include links by embedding or by creating a screenshot. Embedding works for assets such as YouTube and Vimeo videos, slideshares, PDFs, etc. They will be functional so that the learner does not need to leave the page. Most pages can also be included as a screenshot that links out to the original link. Because the exact behavior depends on the target link, this attribute is called `"prefer"` with current options `"embed"` and `"screenshot"`. If you do not indicate a preference, all embeddable assets will be embedded and other pages will be included as regular links as shown above.
+
+For screenshot and embed links, the only other attribute that matters besides `"prefer"` is `"url"`:
+
+<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @link, "url" : "https://www.youtube.com/watch?v=sMXMKz7TunQ", "prefer" : "embed" --&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
+
+If a link is not embeddable but you want to keep the learner on the page, you may want to try using an iframe. Many pages do not render correctly in an iframe so your mileage may vary. Try it out with `"iframeable" : true`:
+
+<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @link, "url" : "https://nodejs.org/", "text": "Install Node.js", "iframeable" : true --&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
+
+![Customized Link](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/images/iframe.jpg)
+
 
 <!-- @section -->
 

@@ -283,7 +283,7 @@ Other URLs types you can try:
 * PDFs
 * (and much more...)
 
-_Note_: for the curious, we use a combination of support from [Embedly](http://www.embedly.com/) and our own custom handlers to support these richer embedded links.
+_Note_: for the curious, we use a combination of support from [Embedly](http://www.embed.ly/) and our own custom handlers to support these richer embedded links.
 
 ## Basic Resource Presentation
 
@@ -299,13 +299,13 @@ Basic presentation will be done automatically if no screenshot is available for 
 
 For further customization, you can also override the title, image, and description used for the link. This can be done with the attributes `"title"`, `"imageUrl"`, and `"description"` as follows:
 
-<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @resource, "url" : "https://nodejs.org", "title": "Official Node.js site", "imageUrl" : "http://code-maven.com/img/node.png", "description": "Node.js is a JavaScript runtime you can learn at Outlearn" --&gt;</span>
+<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @resource, "forceBasic" : true, "url" : "https://nodejs.org", "title": "Official Node.js site", "imageUrl" : "http://code-maven.com/img/node.png", "description": "Node.js is a JavaScript runtime you can learn at Outlearn" --&gt;</span>
 </pre></td></tr></tbody></table>
 </div>
 
 The link will render like this:
 
-<!-- @resource, "url" : "https://nodejs.org", "text": "Learn more about Node.js", "title": "Official Node.js site", "imageUrl" : "http://code-maven.com/img/node.png", "description": "Node.js is a JavaScript runtime which uses an event-driven, non-blocking I/O model that makes it lightweight and efficient." -->
+<!-- @resource, "url" : "https://nodejs.org", "forceBasic" : true, "title": "Official Node.js site", "imageUrl" : "http://code-maven.com/img/node.png", "description": "Node.js is a JavaScript runtime which uses an event-driven, non-blocking I/O model that makes it lightweight and efficient." -->
 
 
 <!-- @section -->

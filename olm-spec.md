@@ -259,7 +259,7 @@ At import-time, Outlearn will expand `@resource` enrichments to be a screenshot 
 
 Instead of the default screenshot, you can customize the image used by specifying an `imageUrl` parameter, like this:
 
-<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @resource, "url" : "https://nodejs.org/", "imageUrl" : "http://cl.ly/0l0E2I2J173F/nodejs-2560x1440.png" --&gt;</span>
+<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @resource, "url" : "https://nodejs.org/", "imageUrl" : "http://f.cl.ly/items/1P1g3i1O050n3o0T0m24/nodejs-2560x1440.png" --&gt;</span>
 </pre></td></tr></tbody></table>
 </div>
 

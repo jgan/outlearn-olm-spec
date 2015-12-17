@@ -263,7 +263,7 @@ Instead of the default screenshot, you can customize the image used by specifyin
 </pre></td></tr></tbody></table>
 </div>
 
-<!-- @resource, "url" : "https://nodejs.org/", "imageUrl" : "http://cl.ly/0l0E2I2J173F/nodejs-2560x1440.png" -->
+<!-- @resource, "url" : "https://nodejs.org/", "imageUrl" : "http://f.cl.ly/items/1P1g3i1O050n3o0T0m24/nodejs-2560x1440.png" -->
 
 ## Special Resources
 

@@ -1,11 +1,11 @@
 <!--
 {
 "name" : "outlearn-markdown-specification",
-"version" : "0.2.1",
+"version" : "0.3.0",
 "title" : "Outlearn Markdown Specification",
 "description": "OLM (Outlearn Markdown) is an annotated, markdown-compatible text format for importing simple learning content as Outlearn modules.",
 "homepage" : "http://www.github.com/outlearn-content/outlearn-markdown-spec",
-"freshnessDate": 2015-11-20,
+"freshnessDate": 2015-12-20,
 "author" : "Will Koffel",
 "license" : "CC BY",
 "contact" : {"email": "will@outlearn.com"}
@@ -17,7 +17,7 @@
 # Outlearn Markdown
 
 
-> THIS IS A DRAFT DOCUMENT - WE WELCOME FEEDBACK AS THIS FORMAT EVOLVES - CURRENT AS OF NOVEMBER 20, 2015
+> THIS IS A DRAFT DOCUMENT - WE WELCOME FEEDBACK AS THIS FORMAT EVOLVES - CURRENT AS OF DECEMBER 20, 2015
 
 
 Outlearn Markdown (*OLM*) is a [Github-Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/) compatible file format for easily creating content that imports directly to Outlearn.
@@ -25,26 +25,6 @@ Outlearn Markdown (*OLM*) is a [Github-Flavored Markdown](https://help.github.co
 OLM files are regular Markdown files, annotated with HTML comments in a special format that enriches the content with Outlearn learning features.
 
 **Note:** this specification itself is published in OLM.  Look at the [raw markdown](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/olm-spec.md) to see the annotations for this file in context.
-
-<!-- We could remove this part. The OLM Modules work so well that it's probably not necessary to bring in this complication.
-
-## OLM as a full Module definition
-
-OLM is primarily used to enrich content, but in many cases it can be used to define a whole Learning Module.  The next section describes how to author Modules using OLM.
-
-Limitations of OLM-defined Modules include:
-
-* OLM is a single file format.  One text file contains all the content and meta-data.  If the amount of content is too large or diverse to naturally fit in a single file, the OLP package format is likely a better fit.
-* Only a single module may be defined in an OLM file. An OLP package may define and import multiple learning modules at once.
-* All assets (e.g. videos and images) must be hosted remotely and referenced within the OLM asset annotations.  This means that all referenced assets must be publicly available.  OLP allows bundled assets, including private videos and images.
-
-If you have great existing Markdown content, OLM is a convenient way to get even more out of it through simple enrichments that give it new life in the Outlearn catalog.  If you are authoring learning materials from scratch, we recommend using the richer OLP approach for anything but simple, single-file Modules with a handful of Sections.
-
-## Naming OLM Files
-
-Outlearn will import OLM files that have an extension of `.olm` or an extension of `.md`.  We recommend `.olm` except in cases where `.md` is needed for compatibility with other systems that may require the `.md` suffix to properly render Markdown (notably Github).
-
- -->
 
 <!-- @section -->
 
@@ -112,9 +92,9 @@ Now that we are comfortable with the basics ...
 
 Each section has a title, which appears in the table of contents and learning experience on Outlearn.
 
-In the simplest form, `<!-- @section -->` can stand alone.  When you import your OLM file, the section will get assigned a title based on the first header tag (line starting with `#`) that is encountered in the section.  In the example above, the opening section will automatically inherit the title "Introduction".
+In the simplest form, `<!-- @section -->` can stand alone.  When you import your OLM file, the section will get assigned a title based on the first header tag (i.e. line starting with `#`) that is encountered in the section.  In the example above, the opening section will automatically inherit the title "Introduction".
 
-You can also give the title as shown by specifying it in the `@section` annotation.
+You can also give the title directly as shown by specifying it in the `@section` annotation.
 
 <!-- @section -->
 
@@ -165,65 +145,6 @@ function sum(a, b) {
   return a+b;
 }
 ```  
-
-<!-- @section -->
-
-# External Links
-
-When you want to link to a page outside of Outlearn, a regular Markdown link will work, and will open in a new browser tab.
-
-If you want to give learners a great experience with links, OLM provides a bunch of ways to enrich them with the `@link` element.
-
-The simplest example is to create a task out the link:
-
-<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @link, "url" : "https://nodejs.org/" --&gt;</span>
-</pre></td></tr></tbody></table>
-</div>
-
-At import-time, all `@link` enrichments will be expanded to include a title, description, and image. You can see the code above rendered below:
-
-<!-- @link, "url" : "https://nodejs.org/" -->
-
-<!-- ![Basic Link](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/images/basic-link.png) -->
-
-You can specify the text to be used with the checkbox using the `"text"` field:
-
-<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @link, "url" : "https://nodejs.org/", "text": "Install Node.js" --&gt;</span>
-</pre></td></tr></tbody></table>
-</div>
-
-For further customization, you can also override the title, image, and description used for the link. This can be done with the attributes `"title"`, `"imageUrl"`, and `"description"` as follows:
-
-<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @link, "url" : "https://nodejs.org", "text": "Learn more about Node.js", "title": "Official Node.js site", "imageUrl" : "http://code-maven.com/img/node.png", "description": "Node.js is a JavaScript runtime which uses an event-driven, non-blocking I/O model that makes it lightweight and efficient." --&gt;</span>
-</pre></td></tr></tbody></table>
-</div>
-
-The link will render like this:
-
-<!-- @link, "url" : "https://nodejs.org", "text": "Learn more about Node.js", "title": "Official Node.js site", "imageUrl" : "http://code-maven.com/img/node.png", "description": "Node.js is a JavaScript runtime which uses an event-driven, non-blocking I/O model that makes it lightweight and efficient." -->
-
-<!-- ![Customized Link](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/images/customized-link.png) -->
-
-You can also include links by embedding or by creating a screenshot. Embedding works for assets such as YouTube and Vimeo videos, slideshares, PDFs, etc. They will be functional so that the learner does not need to leave the page. Most pages can also be included as a screenshot that links out to the original link. Because the exact behavior depends on the target link, this attribute is called `"prefer"` with current options `"embed"` and `"screenshot"`. If you do not indicate a preference, all embeddable assets will be embedded and other pages will be included as regular links as shown above.
-
-For screenshot and embed links, the only other attribute that matters besides `"prefer"` is `"url"`:
-
-<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @link, "url" : "https://www.youtube.com/watch?v=sMXMKz7TunQ", "prefer" : "embed" --&gt;</span>
-</pre></td></tr></tbody></table>
-</div>
-
-If a link is not embeddable but you want to keep the learner on the page, you may want to try using an iframe. Many pages do not render correctly in an iframe so your mileage may vary. Try it out with `"iframeable" : true`:
-
-<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @link, "url" : "https://nodejs.org/", "text": "Install Node.js", "iframeable" : true --&gt;</span>
-</pre></td></tr></tbody></table>
-</div>
-
-Try clicking on the link to see the iframe in action.
-
-<!-- @link, "url" : "https://nodejs.org/", "text": "Install Node.js", "iframeable" : true -->
-
-<!-- ![Customized Link](https://raw.githubusercontent.com/outlearn-content/outlearn-olm-spec/master/images/iframe.png) -->
-
 
 <!-- @section -->
 
@@ -318,6 +239,74 @@ Which of these people created Linux?
 <!-- @end -->
 
 
+<!-- @section -->
+
+# Flexible Link Resources
+
+When you want to link to a page outside of Outlearn, a regular Markdown link will work, and will open in a new browser tab.
+
+If you want to give learners a great experience with external content, OLM provides a bunch of ways to enrich them with the `@resource` element.
+
+The simplest example is to create a resource from a URL:
+
+<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @resource, "url" : "https://nodejs.org/" --&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
+
+At import-time, Outlearn will expand `@resource` enrichments to be a screenshot that links out to the original.  You can see the code above rendered below:
+
+<!-- @resource, "url" : "https://nodejs.org/" -->
+
+Instead of the default screenshot, you can customize the image used by specifying an `imageUrl` parameter, like this:
+
+<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @resource, "url" : "https://nodejs.org/", "imageUrl" : "http://cl.ly/0l0E2I2J173F/nodejs-2560x1440.png" --&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<!-- @resource, "url" : "https://nodejs.org/", "imageUrl" : "http://cl.ly/0l0E2I2J173F/nodejs-2560x1440.png" -->
+
+## Special Resources
+
+Outlearn has support for many custom renderings of resource URLs.  For example, if the resource URL is a YouTube video, it will render inline like this:
+
+<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @resource, "url" : "https://www.youtube.com/watch?v=RDfjXj5EGqI" --&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<!-- @resource, "url" : "https://www.youtube.com/watch?v=RDfjXj5EGqI" -->
+
+Other URLs types you can try:
+
+* GitHub repository URLs
+* SlideShare presentations
+* Google Docs
+* PDFs
+* (and much more...)
+
+_Note_: for the curious, we use a combination of support from [Embedly](http://www.embedly.com/) and our own custom handlers to support these richer embedded links.
+
+## Basic Resource Presentation
+
+If screenshots and embeds are not working well for your resource, or you prefer a simpler presentation, resources can also be rendered in a _Basic_ mode which provides plenty of customization.
+
+Basic presentation will be done automatically if no screenshot is available for a link.  But you can force basic presentation with the `"forceBasic": true` option.  For example, in order to link out to a YouTube video instead of embedding it:
+
+<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @resource, "url" : "https://www.youtube.com/watch?v=RDfjXj5EGqI", "forceBasic" : true --&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<!-- @resource, "url" : "https://www.youtube.com/watch?v=RDfjXj5EGqI", "forceBasic": true -->
+
+For further customization, you can also override the title, image, and description used for the link. This can be done with the attributes `"title"`, `"imageUrl"`, and `"description"` as follows:
+
+<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @resource, "url" : "https://nodejs.org", "title": "Official Node.js site", "imageUrl" : "http://code-maven.com/img/node.png", "description": "Node.js is a JavaScript runtime you can learn at Outlearn" --&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
+
+The link will render like this:
+
+<!-- @resource, "url" : "https://nodejs.org", "text": "Learn more about Node.js", "title": "Official Node.js site", "imageUrl" : "http://code-maven.com/img/node.png", "description": "Node.js is a JavaScript runtime which uses an event-driven, non-blocking I/O model that makes it lightweight and efficient." -->
+
 
 <!-- @section -->
 
@@ -328,6 +317,8 @@ Outlearn supports the regular Markdown syntax for including images.
 ```markdown
 ![sea](https://raw.githubusercontent.com/outlearn-content/outlearn-modules/master/assets/sea.jpg)
 ```
+
+![sea](https://raw.githubusercontent.com/outlearn-content/outlearn-modules/master/assets/sea.jpg)
 
 Video assets hosted on YouTube and Vimeo are supported via the `@asset` tag.
 
@@ -342,14 +333,11 @@ Video assets hosted on YouTube and Vimeo are supported via the `@asset` tag.
 Remember to to use `https` and not `http` when specifying the video URL. Otherwise some browsers will not show it. Note that Outlearn uses the embed URLs. Here is how you extract the video ID from the regular URL and turn it into the embed URL.
 
 
-| Video Provider | Vimeo | YouTube |
+|  | Vimeo | YouTube |
 |-----------|----------|--------|
 | Regular URL | https://vimeo.com/67325705 | https://www.youtube.com/watch?v=CmjeCchGRQo  |
 | Video ID | 67325705 | CmjeCchGRQo |
 | Embed URL | https://player.vimeo.com/video/67325705 | [https://www.youtube.com/embed/ CmjeCchGRQo](https://www.youtube.com/embed/CmjeCchGRQo)  |
-
-
-
 
 
 Where possible, Outlearn will try to play the video in our preferred player, which includes advanced features for learners like keyboard controls, skip-back, multiple size options, and accessibility features.

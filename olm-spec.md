@@ -130,14 +130,6 @@ The example above gets rendered on Outlearn as follows:
 
 Markdown provides native support for code blocks.  If found, these code blocks will also get rendered by our syntax-highlighting library.  Code blocks using triple-back-tick are supported just like on Github, and will get automatic syntax-highlighting.
 
-    ```javascript
-    function sum(a, b) {
-      return a+b;
-    }
-    ```
-
-The JavaScript code shown above will be rendered by Outlearn as below:
-
 ```javascript
 function sum(a, b) {
   return a+b;

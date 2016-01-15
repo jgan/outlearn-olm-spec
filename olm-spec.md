@@ -17,7 +17,7 @@
 # Outlearn Markdown
 
 
-> THIS IS A DRAFT DOCUMENT - WE WELCOME FEEDBACK AS THIS FORMAT EVOLVES - CURRENT AS OF DECEMBER 20, 2015
+> THIS IS A DRAFT DOCUMENT - WE WELCOME FEEDBACK AS THIS FORMAT EVOLVES - CURRENT AS OF JANUARY 15, 2016
 
 
 Outlearn Markdown (*OLM*) is a [Github-Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/) compatible file format for easily creating content that imports directly to Outlearn.
@@ -107,22 +107,22 @@ Users can engage with content through simple Task items.  A trackable checkbox c
 </pre></td></tr></tbody></table>
 </div>
 
-## Requiring a Deliverable
+## Open Responses
 
-Your Task item can optionally require a deliverable to be submitted by a learner.  This can be useful when asking learners to do things like:
+An open response task requires a deliverable to be submitted by a learner.  This can be useful when asking learners to do things like:
 
 - author a simple 1-paragraph summary of what they've learned from watching a video
 - describe three ways a specific technical strategy might be applicable in your codebase
 - submit a pull request URL for a simple code modification in a hands-on lab exercise
 - paste a code sample, algorithm analysis, or other small response to a question or task
 
-<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @task, "hasDeliverable" : true, "text" : "Fork the repository above, fix the broken test, and submit a URL for your pull-request." --&gt;</span>
+<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @openResponse, "text" : "Fork the repository above, fix the broken test, and submit a URL for your pull-request." --&gt;</span>
 </pre></td></tr></tbody></table>
 </div>
 
 The example above gets rendered on Outlearn as follows:
 
- <!-- @task, "hasDeliverable" : true, "text" : "Fork the repository above, fix the broken test, and submit a URL for your pull-request."-->
+ <!-- @openResponse, "text" : "Fork the repository above, fix the broken test, and submit a URL for your pull-request."-->
 
 <!-- @section -->
 
@@ -145,6 +145,64 @@ function sum(a, b) {
   return a+b;
 }
 ```  
+
+Outlearn supports a special version of codeblocks allowing more than one language to be present for a particular code example.  Outlearn formats the variations as tabs, and when a user selects a variation, all the other code samples on that page also reflect their preference.
+
+To use multi-tab code blocks, wrap a contiguous set of fenced code blocks (as shown above, and each fenced section needs a language specified) in between an `@codeBlock` and `@end` annotation:
+
+
+<div class="highlight objective_c"><table><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="code"><pre><span class="o">&lt;</span><span class="o">!--</span> <span class="err">@codeBlock</span> <span class="o">--&gt;</span>
+
+<span class="err">```</span><span class="n">javascript</span>
+<span class="n">function</span> <span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="err">```</span>
+
+<span class="err">```</span><span class="n">ruby</span>
+<span class="n">def</span> <span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+  <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+<span class="n">end</span>
+<span class="err">```</span>
+
+<span class="o">&lt;</span> <span class="o">!--</span> <span class="k">@end</span> <span class="o">--&gt;</span>
+
+</pre></td></tr></tbody></table>
+</div>
+
+Which will appear on Outlearn like:
+
+<!-- @codeBlock -->
+
+```javascript
+function sum(a, b) {
+  return a+b;
+}
+```
+
+```ruby
+def sum(a, b)
+  a+b
+end
+```
+
+<!-- @end -->
 
 <!-- @section -->
 

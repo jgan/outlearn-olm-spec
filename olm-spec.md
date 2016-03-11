@@ -1,11 +1,10 @@
 <!--
 {
 "name" : "outlearn-markdown-specification",
-"version" : "0.3.0",
+"version" : "0.3.1",
 "title" : "Outlearn Markdown Specification",
-"description": "OLM (Outlearn Markdown) is an annotated, markdown-compatible text format for importing simple learning content as Outlearn modules.",
 "homepage" : "http://www.github.com/outlearn-content/outlearn-markdown-spec",
-"freshnessDate": 2015-12-20,
+"freshnessDate": 2016-03-11,
 "author" : "Will Koffel",
 "license" : "CC BY",
 "contact" : {"email": "will@outlearn.com"}
@@ -17,7 +16,7 @@
 # Outlearn Markdown
 
 
-> THIS IS A DRAFT DOCUMENT - WE WELCOME FEEDBACK AS THIS FORMAT EVOLVES - CURRENT AS OF JANUARY 15, 2016
+> THIS IS A DRAFT DOCUMENT - WE WELCOME FEEDBACK AS THIS FORMAT EVOLVES - CURRENT AS OF MARCH 11, 2016
 
 
 Outlearn Markdown (*OLM*) is a [Github-Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/) compatible file format for easily creating content that imports directly to Outlearn.
@@ -42,7 +41,6 @@ OLM files defining a Module must have header metadata specified at the top.  Fie
 "name" : "learning-the-tango-steps",
 "version" : "1.0",
 "title" : "Learning the Tango Steps",
-"description": "An introduction to the steps of the tango, including a video lesson.",
 "homepage" : "http://tango.outlearn.com/",
 "canonicalSource" : "http://tango.outlearn.com/steps",
 "freshnessDate" : 2015-07-29,
@@ -98,7 +96,9 @@ You can also give the title directly as shown by specifying it in the `@section`
 
 <!-- @section -->
 
-# Task Items
+# Task and Open Response Items
+
+## Tasks
 
 Users can engage with content through simple Task items.  A trackable checkbox can be created in your OLM content using the `@task` enrichment.
 
@@ -109,7 +109,7 @@ Users can engage with content through simple Task items.  A trackable checkbox c
 
 ## Open Responses
 
-An open response task requires a deliverable to be submitted by a learner.  This can be useful when asking learners to do things like:
+An Open Response requires a deliverable to be submitted by a learner.  This can be useful when asking learners to do things like:
 
 - author a simple 1-paragraph summary of what they've learned from watching a video
 - describe three ways a specific technical strategy might be applicable in your codebase

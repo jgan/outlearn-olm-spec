@@ -1,10 +1,10 @@
 <!--
 {
 "name" : "outlearn-markdown-specification",
-"version" : "0.3.1",
+"version" : "0.3.2",
 "title" : "Outlearn Markdown Specification",
 "homepage" : "http://www.github.com/outlearn-content/outlearn-markdown-spec",
-"freshnessDate": 2016-03-11,
+"freshnessDate": 2016-03-23,
 "author" : "Will Koffel",
 "license" : "CC BY",
 "contact" : {"email": "will@outlearn.com"}
@@ -16,7 +16,7 @@
 # Outlearn Markdown
 
 
-> THIS IS A DRAFT DOCUMENT - WE WELCOME FEEDBACK AS THIS FORMAT EVOLVES - CURRENT AS OF MARCH 11, 2016
+> THIS IS A DRAFT DOCUMENT - WE WELCOME FEEDBACK AS THIS FORMAT EVOLVES - CURRENT AS OF MARCH 23, 2016
 
 
 Outlearn Markdown (*OLM*) is a [Github-Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/) compatible file format for easily creating content that imports directly to Outlearn.
@@ -368,27 +368,17 @@ Outlearn supports the regular Markdown syntax for including images.
 
 ![sea](https://raw.githubusercontent.com/outlearn-content/outlearn-modules/master/assets/sea.jpg)
 
-Video assets hosted on YouTube and Vimeo are supported via the `@asset` tag.
+Video assets hosted on YouTube and Vimeo are supported via the `@resource` tag.
 
 <div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre><span class="nv">&lt;!-- @asset, "contentType": "outlearn/video", "provider": "vimeo", "url": "https://player.vimeo.com/video/67325705" --&gt;</span>
+3</pre></td><td class="code"><pre><span class="nv">&lt;!-- @resource, "url": "https://vimeo.com/67325705" --&gt;</span>
 
-<span class="nv">&lt;!-- @asset, "contentType": "outlearn/video", "provider": "youtube", "url": "https://www.youtube.com/embed/CmjeCchGRQo" --&gt;</span>
+<span class="nv">&lt;!-- @resource, "url": "https://www.youtube.com/watch?v=CmjeCchGRQo" --&gt;</span>
 </pre></td></tr></tbody></table>
 </div>
 
-Remember to to use `https` and not `http` when specifying the video URL. Otherwise some browsers will not show it. Note that Outlearn uses the embed URLs. Here is how you extract the video ID from the regular URL and turn it into the embed URL.
-
-
-|  | Vimeo | YouTube |
-|-----------|----------|--------|
-| Regular URL | https://vimeo.com/67325705 | https://www.youtube.com/watch?v=CmjeCchGRQo  |
-| Video ID | 67325705 | CmjeCchGRQo |
-| Embed URL | https://player.vimeo.com/video/67325705 | [https://www.youtube.com/embed/ CmjeCchGRQo](https://www.youtube.com/embed/CmjeCchGRQo)  |
-
-
-Where possible, Outlearn will try to play the video in our preferred player, which includes advanced features for learners like keyboard controls, skip-back, multiple size options, and accessibility features.
+Remember to to use `https` and not `http` when specifying the video URL. Otherwise some browsers will not show it.
 
 
 <!-- @section, -->

@@ -60,33 +60,19 @@ See the full [OLP specification](https://www.outlearn.com/learn/outlearn/outlear
 
 We strongly advise authors to break their content into bite-sized sections to make it easier for learners to navigate, consume, and track their learning progress.  To divide your OLM into navigable sections for a learner, you can add a `@section` annotation.
 
-<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13</pre></td><td class="code"><pre><span class="nb">&lt;</span>!-- @section --&gt;
-
+```markdown
 # Introduction
 
 Welcome to learning about ...
 
-<span class="nb">&lt;</span>!-- @section, "title": "Chapter 1 - Basics" --&gt;
+<!-- @section, "title": "Chapter 1 - Basics" -->
 
 Let us get started with some fundamentals ...
 
-<span class="nb">&lt;</span>!-- @section, "title": "Chapter 2 - Advanced Topics" --&gt;
+<!-- @section, "title": "Chapter 2 - Advanced Topics" -->
 
 Now that we are comfortable with the basics ...
-</pre></td></tr></tbody></table>
-</div>
+```
 
 Each section has a title, which appears in the table of contents and learning experience on Outlearn.
 
@@ -102,10 +88,9 @@ You can also give the title directly as shown by specifying it in the `@section`
 
 Users can engage with content through simple Task items.  A trackable checkbox can be created in your OLM content using the `@task` enrichment.
 
-
-<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @task, "text" : "Run the above code example on your own machine." --&gt;</span>
-</pre></td></tr></tbody></table>
-</div>
+```markdown
+<!-- @task, "text" : "Run the above code example on your own machine." -->
+```
 
 ## Open Responses
 
@@ -116,13 +101,13 @@ An Open Response requires a deliverable to be submitted by a learner.  This can 
 - submit a pull request URL for a simple code modification in a hands-on lab exercise
 - paste a code sample, algorithm analysis, or other small response to a question or task
 
-<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @openResponse, "text" : "Fork the repository above, fix the broken test, and submit a URL for your pull-request." --&gt;</span>
-</pre></td></tr></tbody></table>
-</div>
+```markdown
+<!-- @openResponse, "text" : "Fork the repository above, fix the broken test, and submit a URL for your pull-request." -->
+```
 
 The example above gets rendered on Outlearn as follows:
 
- <!-- @openResponse, "text" : "Fork the repository above, fix the broken test, and submit a URL for your pull-request."-->
+<!-- @openResponse, "text" : "Fork the repository above, fix the broken test, and submit a URL for your pull-request."-->
 
 <!-- @section -->
 
@@ -141,40 +126,24 @@ Outlearn supports a special version of codeblocks allowing more than one languag
 To use multi-tab code blocks, wrap a contiguous set of fenced code blocks (as shown above, and each fenced section needs a language specified) in between an `@codeBlock` and `@end` annotation:
 
 
-<div class="highlight objective_c"><table><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-</pre></td><td class="code"><pre><span class="o">&lt;</span><span class="o">!--</span> <span class="err">@codeBlock</span> <span class="o">--&gt;</span>
+``````markdown
+<!-- @codeBlock -->
 
-<span class="err">```</span><span class="n">javascript</span>
-<span class="n">function</span> <span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="err">```</span>
 
-<span class="err">```</span><span class="n">ruby</span>
-<span class="n">def</span> <span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-  <span class="n">a</span><span class="o">+</span><span class="n">b</span>
-<span class="n">end</span>
-<span class="err">```</span>
+```javascript
+function sum(a, b) {
+  return a+b;
+}
+```
 
-<span class="o">&lt;</span> <span class="o">!--</span> <span class="k">@end</span> <span class="o">--&gt;</span>
+```ruby
+def sum(a, b)
+  a+b
+end
+```
 
-</pre></td></tr></tbody></table>
-</div>
+<!-- @end -->
+``````
 
 Which will appear on Outlearn like:
 
@@ -202,30 +171,19 @@ Simple multiple choice exercises include three components.  The _question_ (and 
 
 In OLM, we can define multiple choice questions by putting them between a `@multipleChoice` and an `@end` annotation.
 
-<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12</pre></td><td class="code"><pre><span class="nb">&lt;!-- @multipleChoice --&gt;</span>
+```markdown
+<!-- @multipleChoice -->
 
 What is Node.js?
-<span class="p">
--</span> <span class="p">[</span><span class="nv"> </span><span class="p">]</span> A package manager for JavaScript packages
-<span class="p">-</span> <span class="p">[</span><span class="nv"> </span><span class="p">]</span> A front-end framework for heavy-traffic web applications
-<span class="p">-</span> <span class="p">[</span><span class="nb">X</span><span class="p">]</span> A platform for scalable network applications
+
+- [ ] A package manager for JavaScript packages
+- [ ] A front-end framework for heavy-traffic web applications
+- [X] A platform for scalable network applications
 
 Remember that Node.js is more powerful than any individual use that it can be associated with.
 
-<span class="nb">&lt;!-- @end --&gt;</span>
-</pre></td></tr></tbody></table>
-</div>
+<!-- @end -->
+```
 
 Use `- [ ]` to start an incorrect answer, and `- [X]` to start a correct answer.
 The markdown above the answers is treated as the question, and the markdown below the answers
@@ -297,9 +255,9 @@ If you want to give learners a great experience with external content, OLM provi
 
 The simplest example is to create a resource from a URL:
 
-<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @resource, "url" : "https://nodejs.org/" --&gt;</span>
-</pre></td></tr></tbody></table>
-</div>
+```markdown
+<!-- @resource, "url" : "https://nodejs.org/" -->
+```
 
 At import-time, Outlearn will expand `@resource` enrichments to be a screenshot that links out to the original.  You can see the code above rendered below:
 
@@ -307,9 +265,9 @@ At import-time, Outlearn will expand `@resource` enrichments to be a screenshot 
 
 Instead of the default screenshot, you can customize the image used by specifying an `imageUrl` parameter, like this:
 
-<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @resource, "url" : "https://nodejs.org/", "imageUrl" : "http://f.cl.ly/items/1P1g3i1O050n3o0T0m24/nodejs-2560x1440.png" --&gt;</span>
-</pre></td></tr></tbody></table>
-</div>
+```markdown
+<!-- @resource, "url" : "https://nodejs.org/", "imageUrl" : "http://f.cl.ly/items/1P1g3i1O050n3o0T0m24/nodejs-2560x1440.png" -->
+```
 
 <!-- @resource, "url" : "https://nodejs.org/", "imageUrl" : "http://f.cl.ly/items/1P1g3i1O050n3o0T0m24/nodejs-2560x1440.png" -->
 
@@ -317,9 +275,9 @@ Instead of the default screenshot, you can customize the image used by specifyin
 
 Outlearn has support for many custom renderings of resource URLs.  For example, if the resource URL is a YouTube video, it will render inline like this:
 
-<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @resource, "url" : "https://www.youtube.com/watch?v=RDfjXj5EGqI" --&gt;</span>
-</pre></td></tr></tbody></table>
-</div>
+```markdown
+<!-- @resource, "url" : "https://www.youtube.com/watch?v=RDfjXj5EGqI" -->
+```
 
 <!-- @resource, "url" : "https://www.youtube.com/watch?v=RDfjXj5EGqI" -->
 
@@ -339,17 +297,17 @@ If screenshots and embeds are not working well for your resource, or you prefer 
 
 Basic presentation will be done automatically if no screenshot is available for a link.  But you can force basic presentation with the `"forceBasic": true` option.  For example, in order to link out to a YouTube video instead of embedding it:
 
-<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @resource, "url" : "https://www.youtube.com/watch?v=RDfjXj5EGqI", "forceBasic" : true --&gt;</span>
-</pre></td></tr></tbody></table>
-</div>
+```markdown
+<!-- @resource, "url" : "https://www.youtube.com/watch?v=RDfjXj5EGqI", "forceBasic": true -->
+```
 
 <!-- @resource, "url" : "https://www.youtube.com/watch?v=RDfjXj5EGqI", "forceBasic": true -->
 
 For further customization, you can also override the title, image, and description used for the link. This can be done with the attributes `"title"`, `"imageUrl"`, and `"description"` as follows:
 
-<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nv">&lt;!-- @resource, "forceBasic" : true, "url" : "https://nodejs.org", "title": "Official Node.js site", "imageUrl" : "http://code-maven.com/img/node.png", "description": "Node.js is a JavaScript runtime you can learn at Outlearn" --&gt;</span>
-</pre></td></tr></tbody></table>
-</div>
+```markdown
+<!-- @resource, "url" : "https://nodejs.org", "forceBasic" : true, "title": "Official Node.js site", "imageUrl" : "http://code-maven.com/img/node.png", "description": "Node.js is a JavaScript runtime which uses an event-driven, non-blocking I/O model that makes it lightweight and efficient." -->
+```
 
 The link will render like this:
 
@@ -370,13 +328,11 @@ Outlearn supports the regular Markdown syntax for including images.
 
 Video assets hosted on YouTube and Vimeo are supported via the `@resource` tag.
 
-<div class="highlight markdown"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3</pre></td><td class="code"><pre><span class="nv">&lt;!-- @resource, "url": "https://vimeo.com/67325705" --&gt;</span>
+```markdown
+<!-- @resource, "url": "https://vimeo.com/67325705" -->
 
-<span class="nv">&lt;!-- @resource, "url": "https://www.youtube.com/watch?v=CmjeCchGRQo" --&gt;</span>
-</pre></td></tr></tbody></table>
-</div>
+<!-- @resource, "url": "https://www.youtube.com/watch?v=CmjeCchGRQo" -->
+```
 
 Remember to to use `https` and not `http` when specifying the video URL. Otherwise some browsers will not show it.
 
